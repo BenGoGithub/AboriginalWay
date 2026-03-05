@@ -1,0 +1,116 @@
+Mar  5 17:15:30 10.71.57.0 u45073286 Connection from 10.71.57.0 port 45166 on 82.165.80.42 port 22 rdomain ""
+Mar  5 17:15:30 10.71.57.0 u45073286 Accepted password for u45073286 from 10.71.57.0 port 45166 ssh2
+Mar  5 17:15:30 10.71.57.0 u45073286 Starting session: subsystem 'sftp' for u45073286 from 10.71.57.0 port 45166 id 0
+Mar  5 17:15:30 10.71.57.0 u45073286 session opened for local user u45073286 from [10.71.57.0]
+Mar  5 17:15:30 10.71.57.0 u45073286 Connection closed by 10.71.57.0 port 45166
+Mar  5 17:15:30 10.71.57.0 u45073286 session closed for local user u45073286 from [10.71.57.0]
+Mar  5 17:15:40 10.71.57.0 u45073286 Connection from 10.71.57.0 port 12804 on 82.165.80.42 port 22 rdomain ""
+Mar  5 17:15:40 10.71.57.0 u45073286 Accepted password for u45073286 from 10.71.57.0 port 12804 ssh2
+Mar  5 17:15:41 10.71.57.0 u45073286 Starting session: subsystem 'sftp' for u45073286 from 10.71.57.0 port 12804 id 0
+Mar  5 17:15:41 10.71.57.0 u45073286 session opened for local user u45073286 from [10.71.57.0]
+Mar  5 17:15:41 10.71.57.0 u45073286 session closed for local user u45073286 from [10.71.57.0]
+Mar  5 17:15:41 10.71.57.0 u45073286 Connection closed by 10.71.57.0 port 12804
+Mar  5 17:15:44 10.71.57.0 u45073286 Connection from 10.71.57.0 port 12808 on 82.165.80.42 port 22 rdomain ""
+Mar  5 17:15:44 10.71.57.0 u45073286 Accepted password for u45073286 from 10.71.57.0 port 12808 ssh2
+Mar  5 17:15:44 10.71.57.0 u45073286 Starting session: subsystem 'sftp' for u45073286 from 10.71.57.0 port 12808 id 0
+Mar  5 17:15:44 10.71.57.0 u45073286 session opened for local user u45073286 from [10.71.57.0]
+Mar  5 17:15:44 10.71.57.0 u45073286 session closed for local user u45073286 from [10.71.57.0]
+Mar  5 17:15:44 10.71.57.0 u45073286 Connection closed by 10.71.57.0 port 12808
+Mar  5 17:15:54 10.71.57.0 u45073286 Connection from 10.71.57.0 port 20606 on 82.165.80.42 port 22 rdomain ""
+Mar  5 17:15:54 10.71.57.0 u45073286 Accepted password for u45073286 from 10.71.57.0 port 20606 ssh2
+Mar  5 17:15:54 10.71.57.0 u45073286 Starting session: subsystem 'sftp' for u45073286 from 10.71.57.0 port 20606 id 0
+Mar  5 17:15:54 10.71.57.0 u45073286 session opened for local user u45073286 from [10.71.57.0]
+Mar  5 17:15:54 10.71.57.0 u45073286 session closed for local user u45073286 from [10.71.57.0]
+Mar  5 17:15:54 10.71.57.0 u45073286 Connection closed by 10.71.57.0 port 20606
+Mar  5 17:15:59 10.71.57.0 u45073286 Connection from 10.71.57.0 port 20616 on 82.165.80.42 port 22 rdomain ""
+Mar  5 17:15:59 10.71.57.0 u45073286 Accepted password for u45073286 from 10.71.57.0 port 20616 ssh2
+Mar  5 17:15:59 10.71.57.0 u45073286 Starting session: subsystem 'sftp' for u45073286 from 10.71.57.0 port 20616 id 0
+Mar  5 17:15:59 10.71.57.0 u45073286 session opened for local user u45073286 from [10.71.57.0]
+Mar  5 17:15:59 10.71.57.0 u45073286 session closed for local user u45073286 from [10.71.57.0]
+Mar  5 17:15:59 10.71.57.0 u45073286 Connection closed by 10.71.57.0 port 20616
+Mar  5 17:17:31 10.71.57.0 u45073286 Connection from 10.71.57.0 port 64414 on 82.165.80.42 port 22 rdomain ""
+Mar  5 17:17:31 10.71.57.0 u45073286 Accepted password for u45073286 from 10.71.57.0 port 64414 ssh2
+Mar  5 17:17:31 10.71.57.0 u45073286 Starting session: subsystem 'sftp' for u45073286 from 10.71.57.0 port 64414 id 0
+Mar  5 17:17:31 10.71.57.0 u45073286 session opened for local user u45073286 from [10.71.57.0]
+Mar  5 17:17:31 10.71.57.0 u45073286 session closed for local user u45073286 from [10.71.57.0]
+Mar  5 17:17:31 10.71.57.0 u45073286 Connection closed by 10.71.57.0 port 64414
+Mar  5 17:25:01 10.71.57.0 u45073286 Connection from 10.71.57.0 port 34100 on 82.165.80.42 port 22 rdomain ""
+Mar  5 17:25:09 10.71.57.0 u45073286 Accepted password for u45073286 from 10.71.57.0 port 34100 ssh2
+Mar  5 17:25:09 10.71.57.0 u45073286 Starting session: subsystem 'sftp' for u45073286 from 10.71.57.0 port 34100 id 0
+Mar  5 17:25:09 10.71.57.0 u45073286 session opened for local user u45073286 from [10.71.57.0]
+Mar  5 17:26:46 10.71.57.0 u45073286 Connection from 10.71.57.0 port 45534 on 82.165.80.42 port 22 rdomain ""
+Mar  5 17:26:46 10.71.57.0 u45073286 Accepted password for u45073286 from 10.71.57.0 port 45534 ssh2
+Mar  5 17:26:46 10.71.57.0 u45073286 Connection from 10.71.57.0 port 45530 on 82.165.80.42 port 22 rdomain ""
+Mar  5 17:26:46 10.71.57.0 u45073286 Accepted password for u45073286 from 10.71.57.0 port 45530 ssh2
+Mar  5 17:26:47 10.71.57.0 u45073286 Starting session: subsystem 'sftp' for u45073286 from 10.71.57.0 port 45530 id 0
+Mar  5 17:26:47 10.71.57.0 u45073286 Starting session: subsystem 'sftp' for u45073286 from 10.71.57.0 port 45534 id 0
+Mar  5 17:26:47 10.71.57.0 u45073286 session opened for local user u45073286 from [10.71.57.0]
+Mar  5 17:26:47 10.71.57.0 u45073286 session opened for local user u45073286 from [10.71.57.0]
+Mar  5 17:26:47 10.71.57.0 u45073286 sent status No such file
+Mar  5 17:26:47 10.71.57.0 u45073286 open "/BingSiteAuth.xml" flags READ mode 0666
+Mar  5 17:26:47 10.71.57.0 u45073286 open "/general.css" flags READ mode 0666
+Mar  5 17:26:47 10.71.57.0 u45073286 close "/BingSiteAuth.xml" bytes read 85 written 0
+Mar  5 17:26:47 10.71.57.0 u45073286 [10.71.57.0|get|0|85|0|0|0|2f42696e6753697465417574682e786d6c|]
+Mar  5 17:26:47 10.71.57.0 u45073286 close "/general.css" bytes read 6166 written 0
+Mar  5 17:26:47 10.71.57.0 u45073286 [10.71.57.0|get|0|6166|0|0|0|2f67656e6572616c2e637373|]
+Mar  5 17:26:47 10.71.57.0 u45073286 open "/index.html" flags READ mode 0666
+Mar  5 17:26:47 10.71.57.0 u45073286 open "/pinterest-d243d.html" flags READ mode 0666
+Mar  5 17:26:47 10.71.57.0 u45073286 close "/index.html" bytes read 5883 written 0
+Mar  5 17:26:47 10.71.57.0 u45073286 [10.71.57.0|get|0|5883|0|0|0|2f696e6465782e68746d6c|]
+Mar  5 17:26:47 10.71.57.0 u45073286 close "/pinterest-d243d.html" bytes read 7008 written 0
+Mar  5 17:26:47 10.71.57.0 u45073286 [10.71.57.0|get|0|7008|0|0|0|2f70696e7465726573742d64323433642e68746d6c|]
+Mar  5 17:26:47 10.71.57.0 u45073286 open "/robots.txt" flags READ mode 0666
+Mar  5 17:26:47 10.71.57.0 u45073286 open "/sitemap.xml" flags READ mode 0666
+Mar  5 17:26:47 10.71.57.0 u45073286 close "/robots.txt" bytes read 35 written 0
+Mar  5 17:26:47 10.71.57.0 u45073286 [10.71.57.0|get|0|35|0|0|0|2f726f626f74732e747874|]
+Mar  5 17:26:47 10.71.57.0 u45073286 close "/sitemap.xml" bytes read 2555 written 0
+Mar  5 17:26:47 10.71.57.0 u45073286 [10.71.57.0|get|0|2555|0|0|0|2f736974656d61702e786d6c|]
+Mar  5 17:26:47 10.71.57.0 u45073286 open "/C:/tlGMBwVpvzs&feature=related&rel=1" flags READ mode 0666
+Mar  5 17:26:47 10.71.57.0 u45073286 open "/C:/7xKjb7XKOv0&hl=fr&fs=1&rel=0&color1=0x3a3a3a&color2=0x999999" flags READ mode 0666
+Mar  5 17:26:47 10.71.57.0 u45073286 close "/C:/tlGMBwVpvzs&feature=related&rel=1" bytes read 763 written 0
+Mar  5 17:26:47 10.71.57.0 u45073286 [10.71.57.0|get|0|763|0|0|0|2f433a2f746c474d42775670767a7326666561747572653d72656c617465642672656c3d31|]
+Mar  5 17:26:47 10.71.57.0 u45073286 close "/C:/7xKjb7XKOv0&hl=fr&fs=1&rel=0&color1=0x3a3a3a&color2=0x999999" bytes read 763 written 0
+Mar  5 17:26:47 10.71.57.0 u45073286 [10.71.57.0|get|0|763|0|0|0|2f433a2f37784b6a6237584b4f763026686c3d66722666733d312672656c3d3026636f6c6f72313d307833613361336126636f6c6f72323d3078393939393939|]
+Mar  5 17:26:47 10.71.57.0 u45073286 open "/logs/access.log.09.7.gz" flags READ mode 0666
+Mar  5 17:26:47 10.71.57.0 u45073286 open "/logs/access.log.09.3.gz" flags READ mode 0666
+Mar  5 17:26:47 10.71.57.0 u45073286 close "/logs/access.log.09.7.gz" bytes read 5587 written 0
+Mar  5 17:26:47 10.71.57.0 u45073286 [10.71.57.0|get|0|5587|0|0|0|2f6c6f67732f6163636573732e6c6f672e30392e372e677a|]
+Mar  5 17:26:47 10.71.57.0 u45073286 close "/logs/access.log.09.3.gz" bytes read 4912 written 0
+Mar  5 17:26:47 10.71.57.0 u45073286 [10.71.57.0|get|0|4912|0|0|0|2f6c6f67732f6163636573732e6c6f672e30392e332e677a|]
+Mar  5 17:26:48 10.71.57.0 u45073286 open "/logs/access.log.09.2.gz" flags READ mode 0666
+Mar  5 17:26:48 10.71.57.0 u45073286 open "/logs/info.php5" flags READ mode 0666
+Mar  5 17:26:48 10.71.57.0 u45073286 close "/logs/info.php5" bytes read 21 written 0
+Mar  5 17:26:48 10.71.57.0 u45073286 [10.71.57.0|get|0|21|0|0|0|2f6c6f67732f696e666f2e70687035|]
+Mar  5 17:26:48 10.71.57.0 u45073286 close "/logs/access.log.09.2.gz" bytes read 5645 written 0
+Mar  5 17:26:48 10.71.57.0 u45073286 [10.71.57.0|get|1|5645|0|0|0|2f6c6f67732f6163636573732e6c6f672e30392e322e677a|]
+Mar  5 17:26:48 10.71.57.0 u45073286 open "/logs/access.log.09.4.gz" flags READ mode 0666
+Mar  5 17:26:48 10.71.57.0 u45073286 open "/logs/access.log.04.gz" flags READ mode 0666
+Mar  5 17:26:48 10.71.57.0 u45073286 close "/logs/access.log.09.4.gz" bytes read 7148 written 0
+Mar  5 17:26:48 10.71.57.0 u45073286 [10.71.57.0|get|0|7148|0|0|0|2f6c6f67732f6163636573732e6c6f672e30392e342e677a|]
+Mar  5 17:26:48 10.71.57.0 u45073286 close "/logs/access.log.04.gz" bytes read 25966 written 0
+Mar  5 17:26:48 10.71.57.0 u45073286 [10.71.57.0|get|0|25966|0|0|0|2f6c6f67732f6163636573732e6c6f672e30342e677a|]
+Mar  5 17:26:48 10.71.57.0 u45073286 open "/logs/access.log.03.gz" flags READ mode 0666
+Mar  5 17:26:48 10.71.57.0 u45073286 open "/logs/access.log.09.6.gz" flags READ mode 0666
+Mar  5 17:26:48 10.71.57.0 u45073286 close "/logs/access.log.03.gz" bytes read 30782 written 0
+Mar  5 17:26:48 10.71.57.0 u45073286 close "/logs/access.log.09.6.gz" bytes read 8021 written 0
+Mar  5 17:26:48 10.71.57.0 u45073286 [10.71.57.0|get|0|8021|0|0|0|2f6c6f67732f6163636573732e6c6f672e30392e362e677a|]
+Mar  5 17:26:48 10.71.57.0 u45073286 [10.71.57.0|get|0|30782|0|0|0|2f6c6f67732f6163636573732e6c6f672e30332e677a|]
+Mar  5 17:26:48 10.71.57.0 u45073286 open "/logs/access.log.09.1.gz" flags READ mode 0666
+Mar  5 17:26:48 10.71.57.0 u45073286 open "/logs/access.log.05.gz" flags READ mode 0666
+Mar  5 17:26:48 10.71.57.0 u45073286 close "/logs/access.log.09.1.gz" bytes read 19949 written 0
+Mar  5 17:26:48 10.71.57.0 u45073286 [10.71.57.0|get|0|19949|0|0|0|2f6c6f67732f6163636573732e6c6f672e30392e312e677a|]
+Mar  5 17:26:48 10.71.57.0 u45073286 close "/logs/access.log.05.gz" bytes read 44891 written 0
+Mar  5 17:26:48 10.71.57.0 u45073286 [10.71.57.0|get|0|44891|0|0|0|2f6c6f67732f6163636573732e6c6f672e30352e677a|]
+Mar  5 17:26:48 10.71.57.0 u45073286 open "/logs/access.log.02.gz" flags READ mode 0666
+Mar  5 17:26:48 10.71.57.0 u45073286 open "/logs/traffic.db" flags READ mode 0666
+Mar  5 17:26:48 10.71.57.0 u45073286 close "/logs/access.log.02.gz" bytes read 36050 written 0
+Mar  5 17:26:48 10.71.57.0 u45073286 [10.71.57.0|get|0|36050|0|0|0|2f6c6f67732f6163636573732e6c6f672e30322e677a|]
+Mar  5 17:26:48 10.71.57.0 u45073286 close "/logs/traffic.db" bytes read 45056 written 0
+Mar  5 17:26:48 10.71.57.0 u45073286 [10.71.57.0|get|0|45056|0|0|0|2f6c6f67732f747261666669632e6462|]
+Mar  5 17:26:48 10.71.57.0 u45073286 open "/logs/last_traffic" flags READ mode 0666
+Mar  5 17:26:48 10.71.57.0 u45073286 open "/logs/access.log.06.gz" flags READ mode 0666
+Mar  5 17:26:48 10.71.57.0 u45073286 close "/logs/last_traffic" bytes read 0 written 0
+Mar  5 17:26:48 10.71.57.0 u45073286 [10.71.57.0|get|0|0|0|0|0|2f6c6f67732f6c6173745f74726166666963|]
+Mar  5 17:26:48 10.71.57.0 u45073286 close "/logs/access.log.06.gz" bytes read 28245 written 0
+Mar  5 17:26:48 10.71.57.0 u45073286 [10.71.57.0|get|0|28245|0|0|0|2f6c6f67732f6163636573732e6c6f672e30362e677a|]
+Mar  5 17:26:48 10.71.57.0 u45073286 open "/logs/sftp.log" flags READ mode 0666
