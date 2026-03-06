@@ -1,0 +1,11 @@
+# IDE
+.idea/
+
+# Claude
+.claude/
+
+# Logs serveur
+logs/
+
+# Artefacts Office
+*_fichiers/
