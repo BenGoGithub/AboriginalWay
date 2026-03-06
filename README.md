@@ -1,8 +1,23 @@
 # Aboriginal Way - Analyse & Plan d'Améliorations
 
-Site web vitrine pour l'association **Aboriginal Way**, dédié à la promotion de l'art et de la culture aborigène australienne (expositions, ateliers peinture, didgeridoo, cuisine bush tucker).
+Site web vitrine pour l'association **Aboriginal Way**, fondée en **2007**, dédiée à la promotion de l'art et de la culture aborigène australienne (expositions, ateliers peinture, didgeridoo, cuisine bush tucker).
 
 Le site date d'environ 2008-2012 et a été archivé via HTTrack. Il repose sur des technologies obsolètes (HTML 4.01, iframes, Flash) et nécessite une refonte complète pour répondre aux standards actuels.
+
+---
+
+## Changements réalisés
+
+| Fichier | Modification |
+|---------|-------------|
+| `site/ref/documents/partenaires.html` | Réécriture complète : suppression Territory Essence (ancienne), Burrup ; ajout Le Rêve de l'Aborigène (logo, description, dates 24-26 juillet 2026, bouton billetterie) ; réintégration Territory Essence avec image locale |
+| `site/ref/documents/artistes.html` | Suppression des liens vers les pages individuelles d'artistes ; ajout warning en anglais sur les artistes décédés ; vidéo Penny Green ajoutée sous la vidéo principale |
+| `site/ref/documents/exposition.html` | Ajout warning artistes décédés ; correction lien contact (`mailto:` manquant) |
+| `site/ref/documents/photo.html` | Ajout warning artistes décédés |
+| `site/ref/documents/presentation.html` | Ajout de la date de fondation de l'association : 2007 |
+| `index.html` | Suppression widget AddThis et iframe Facebook Like obsolètes |
+| `sitemap.xml` | Correction XML invalide, ajout pages manquantes |
+| `pinterest-d243d.html` | Correction attribut `lang` |
 
 ---
 
@@ -113,7 +128,7 @@ AboriginalWay/
 
 ### Phase 1 - Refonte structurelle
 
-- [ ] Migrer vers **HTML5** avec DOCTYPE uniforme
+- [x] Migrer vers **HTML5** avec DOCTYPE uniforme *(partenaires, artistes)*
 - [ ] Remplacer le layout iframe par une **architecture SPA ou multi-pages** classique
 - [ ] Adopter un layout **CSS Grid / Flexbox** responsive
 - [ ] Ajouter `<meta name="viewport" content="width=device-width, initial-scale=1">`
@@ -133,14 +148,14 @@ AboriginalWay/
 
 ### Phase 3 - SEO & Contenu
 
-- [ ] Ajouter `<meta name="description">` et `<title>` pertinents sur chaque page
+- [x] Ajouter `<meta name="description">` et `<title>` pertinents sur chaque page *(fait sur les pages réécrites)*
 - [ ] Implémenter les balises Open Graph et Twitter Card
 - [ ] Construire une hiérarchie de titres cohérente (H1 > H2 > H3)
-- [ ] Régénérer le `sitemap.xml` complet
+- [x] Régénérer le `sitemap.xml` complet
 - [ ] Configurer `robots.txt` avec directives appropriées
 - [ ] Ajouter des URLs canoniques
 - [ ] Ajouter des données structurées Schema.org (artistes, expositions, organisation)
-- [ ] Corriger ou supprimer les liens cassés
+- [x] Corriger ou supprimer les liens cassés *(liens artistes, mailto contact)*
 
 ### Phase 3b - Contenu à modifier
 
@@ -150,7 +165,7 @@ AboriginalWay/
 
 ### Phase 4 - Sécurité & Performance
 
-- [ ] Migrer tous les liens externes vers **HTTPS**
+- [x] Migrer tous les liens externes vers **HTTPS** *(partenaires, artistes)*
 - [ ] Remplacer les embeds Flash par des **iframes YouTube/Vimeo modernes**
 - [ ] Supprimer les handlers inline, utiliser `addEventListener`
 - [ ] Ajouter des en-têtes de sécurité (CSP, X-Frame-Options, X-Content-Type-Options)
@@ -166,7 +181,7 @@ AboriginalWay/
 - [ ] Ajouter une galerie photo moderne (sans dépendance lourde)
 - [ ] Intégrer un outil d'analytics respectueux (Matomo, Plausible)
 - [ ] Mettre en place un formulaire de contact fonctionnel (au lieu de l'email obfusqué)
-- [ ] Initialiser un dépôt **Git** pour le suivi des modifications
+- [x] Initialiser un dépôt **Git** pour le suivi des modifications
 
 ---
 
