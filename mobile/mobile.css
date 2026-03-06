@@ -1,0 +1,235 @@
+/* mobile.css — Aboriginal Way */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Century Gothic", Arial, sans-serif;
+  background: #1a0a00 url(../site/ref/image/Fond2.jpg) center/cover fixed;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+header {
+  background-color: rgba(0,0,0,0.7);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 2px solid #8B4513;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header img.logo { width: 36px; height: auto; flex-shrink: 0; }
+
+.site-title {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.site-title span {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: normal;
+  color: #aaa;
+}
+
+.back-btn {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 5px 10px;
+  border: 1px solid rgba(139,69,19,0.5);
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── MAIN ── */
+main { padding: 20px 16px 40px; }
+
+/* ── CARD ── */
+.card {
+  background-color: rgba(0,0,0,0.55);
+  border-radius: 6px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+
+/* ── TYPOGRAPHY ── */
+h1 { font-size: 1.4rem; margin-bottom: 16px; color: #fff; }
+h2 { font-size: 1.05rem; margin: 16px 0 8px; color: #ddd; }
+p { line-height: 1.65; margin-bottom: 10px; color: #eee; font-size: 0.95rem; }
+p:last-child { margin-bottom: 0; }
+strong { color: #fff; }
+a { color: #f0a070; }
+ul, ol { padding-left: 20px; margin-bottom: 10px; }
+li { color: #eee; line-height: 1.7; font-size: 0.95rem; }
+
+/* ── WARNING BOX ── */
+.warning {
+  background-color: rgba(139,69,19,0.15);
+  border: 1px solid rgba(139,69,19,0.6);
+  border-radius: 4px;
+  padding: 12px 14px;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #ffd;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+/* ── RESPONSIVE VIDEO ── */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  background: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+
+/* ── ARTIST LIST ── */
+.artist-list { list-style: none; padding: 0; }
+.artist-list li {
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(139,69,19,0.35);
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #fff;
+}
+.artist-list li:last-child { border-bottom: none; }
+
+/* ── CONTACT LINKS ── */
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  background: rgba(139,69,19,0.15);
+  border: 1px solid rgba(139,69,19,0.4);
+  border-radius: 6px;
+  text-decoration: none;
+  color: #fff;
+}
+.contact-link .icon { font-size: 1.6rem; }
+.contact-link .label {
+  font-size: 0.7rem; color: #bbb; text-transform: uppercase;
+  letter-spacing: 0.05em; display: block; margin-bottom: 2px;
+}
+.contact-link .value { font-size: 0.95rem; font-weight: bold; }
+
+/* ── BUTTON ── */
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  background-color: #cf2e2e;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* ── PHOTO GRID ── */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+.photo-grid a { display: block; }
+.photo-grid a img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+}
+
+/* ── PARTNERS ── */
+.partner { text-align: center; padding: 20px 0; }
+.partner + .partner {
+  border-top: 1px solid rgba(139,69,19,0.4);
+  margin-top: 8px;
+}
+.partner img {
+  max-width: 200px;
+  max-height: 120px;
+  width: auto;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+/* ── EN CONSTRUCTION ── */
+.construction { text-align: center; padding: 40px 20px; }
+.construction .icon { font-size: 3rem; display: block; margin-bottom: 16px; }
+
+/* ── HOME INDEX SPECIFIC ── */
+.intro { text-align: center; margin-bottom: 12px; }
+.intro .artists { font-size: 0.78rem; color: #bbb; margin-bottom: 6px; }
+.intro .tagline { font-size: 1.4rem; font-weight: bold; margin-bottom: 4px; }
+.intro .subtitle { font-size: 0.88rem; color: #ccc; margin-bottom: 0; }
+
+.home-photos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.home-photos img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* ── NAV (index) ── */
+nav {
+  background-color: rgba(0,0,0,0.55);
+  border-radius: 6px;
+  overflow: hidden;
+}
+nav a {
+  display: block;
+  padding: 14px 16px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  border-bottom: 1px solid rgba(139,69,19,0.4);
+  transition: background 0.15s;
+}
+nav a:last-child { border-bottom: none; }
+nav a:active { background-color: rgba(139,69,19,0.35); }
+
+.section-label {
+  background-color: rgba(139,69,19,0.25);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #bbb;
+  padding: 6px 16px;
+  border-bottom: 1px solid rgba(139,69,19,0.4);
+}
+nav a .arrow { float: right; color: #8B4513; }
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.75rem;
+  color: #666;
+}
