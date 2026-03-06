@@ -15,9 +15,10 @@ Le site date d'environ 2008-2012 et a été archivé via HTTrack. Il repose sur 
 | `site/ref/documents/exposition.html` | Ajout warning artistes décédés ; correction lien contact (`mailto:` manquant) |
 | `site/ref/documents/photo.html` | Ajout warning artistes décédés |
 | `site/ref/documents/presentation.html` | Ajout de la date de fondation de l'association : 2007 |
-| `index.html` | Suppression widget AddThis et iframe Facebook Like obsolètes |
+| `index.html` | Suppression widget AddThis et iframe Facebook Like obsolètes ; redirection JS vers `mobile/index.html` pour `≤ 768px` |
 | `sitemap.xml` | Correction XML invalide, ajout pages manquantes |
 | `pinterest-d243d.html` | Correction attribut `lang` |
+| `mobile/` | **Création du site mobile dédié** : 12 pages HTML5 + 1 CSS partagé. H1, meta description, Open Graph et JSON-LD sur chaque page. Vidéos responsives, galerie photos CSS grid sans jQuery. Voir `mobile/README.md`. |
 
 ---
 
@@ -42,12 +43,26 @@ Le site date d'environ 2008-2012 et a été archivé via HTTrack. Il repose sur 
 
 ```
 AboriginalWay/
-├── index.html              # Point d'entrée (layout iframe)
+├── index.html              # Point d'entrée (layout iframe + redirection mobile)
 ├── general.css             # CSS racine (dupliqué)
 ├── sitemap.xml             # Sitemap basique (15 URLs)
 ├── robots.txt              # Minimal (référence sitemap uniquement)
+├── mobile/                 # Site mobile dédié (≤ 768px)
+│   ├── mobile.css          # CSS partagé
+│   ├── index.html          # Accueil mobile (Open Graph, JSON-LD)
+│   ├── activites.html
+│   ├── animation-peinture.html
+│   ├── artistes.html
+│   ├── contact.html
+│   ├── cuisine.html
+│   ├── didgeridoo.html
+│   ├── exposition.html
+│   ├── membres.html
+│   ├── partenaires.html
+│   ├── photos.html
+│   └── presentation.html
 ├── site/ref/
-│   ├── documents/          # Pages de contenu (~15 pages)
+│   ├── documents/          # Pages de contenu desktop (~15 pages)
 │   │   ├── artiste/        # Fiches artistes (7 biographies)
 │   │   └── engine/         # VisualLightBox (jQuery plugin galerie)
 │   ├── style/general.css   # CSS dupliqué
@@ -150,8 +165,8 @@ AboriginalWay/
 
 - [x] Migrer vers **HTML5** avec DOCTYPE uniforme *(partenaires, artistes)*
 - [ ] Remplacer le layout iframe par une **architecture SPA ou multi-pages** classique
-- [ ] Créer `/mobile/index.html` — version mobile dédiée du site
-- [ ] Ajouter dans `index.html` une redirection JS vers `/mobile/index.html` pour les appareils mobiles
+- [x] Créer les pages mobiles dédiées dans `/mobile/` (12 pages HTML5 + CSS partagé)
+- [x] Ajouter dans `index.html` une redirection JS vers `/mobile/index.html` pour les appareils mobiles
 - [ ] Restructurer avec des balises sémantiques (`<header>`, `<nav>`, `<main>`, `<footer>`, `<article>`)
 - [ ] Unifier l'encodage en **UTF-8**
 - [ ] Corriger les noms de fichiers (supprimer espaces, accents, doubles points)
