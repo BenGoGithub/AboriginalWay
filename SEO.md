@@ -9,12 +9,12 @@
 | # | Action | État | Fichiers concernés |
 |---|--------|------|--------------------|
 | 1 | Corriger l'encodage des caractères accentués cassés | ✅ Fait | `index.html`, `home.html` |
-| 2 | Reconstruire le sitemap (HTTPS, supprimer artistes individuels, ajouter `home.html`, `<lastmod>`) | ⚠️ Partiel | `sitemap.xml` |
+| 2 | Reconstruire le sitemap (HTTPS, supprimer artistes individuels, ajouter `home.html`, pages mobiles) | ✅ Fait | `sitemap.xml` |
 | 3 | Ajouter un H1 visible sur chaque page de contenu | ✅ Fait (mobile) / ❌ Desktop | `mobile/*.html` (tous) — desktop non traité |
-| 4 | Ajouter `alt` pertinents sur les images principales | ✅ Fait (mobile) / ⚠️ Desktop | `mobile/photos.html` (27 photos avec alt descriptifs + `loading="lazy"`) |
-| 5 | Ajouter les balises Open Graph | ✅ Fait | `mobile/index.html` |
+| 4 | Ajouter `alt` pertinents sur les images principales | ✅ Fait | `mobile/photos.html` (27 photos), `home.html` (4 images corrigées) |
+| 5 | Ajouter les balises Open Graph | ✅ Fait | `index.html` + `mobile/index.html` |
 | 6 | Supprimer le widget AddThis | ✅ Fait | `index.html` |
-| 7 | Ajouter un bloc JSON-LD Organization sur la page d'accueil | ✅ Fait | `mobile/index.html` |
+| 7 | Ajouter un bloc JSON-LD Organization sur la page d'accueil | ✅ Fait | `index.html` + `mobile/index.html` |
 | 8 | Créer les pages mobiles dédiées avec meta SEO complètes | ✅ Fait | `mobile/` (12 pages) |
 
 ---
@@ -100,11 +100,7 @@ Pages desktop sans `<h1>` visible :
 
 | Priorité | Action | Périmètre |
 |----------|--------|-----------|
-| Haute | Finaliser le sitemap (ajouter pages mobiles, supprimer artistes individuels) | `sitemap.xml` |
-| Haute | Ajouter Open Graph sur `index.html` desktop | `index.html` |
-| Haute | Ajouter JSON-LD sur `index.html` desktop | `index.html` |
-| Moyenne | Corriger les `alt` manquants sur `home.html` (desktop) | `site/ref/documents/home.html` |
-| Moyenne | Supprimer les mentions Atelier du Héron | Pages desktop |
-| Moyenne | Supprimer les mentions Yourtes | Pages desktop |
-| Basse | Ajouter `robots.txt` avec directives appropriées | `robots.txt` |
-| Basse | Ajouter des URLs canoniques (`<link rel="canonical">`) | Toutes les pages |
+| Moyenne | Supprimer les mentions Atelier du Héron | Pages desktop (recherche : aucune occurrence trouvée dans le HTML — à confirmer sur le site live) |
+| Moyenne | Supprimer les mentions Yourtes | Pages desktop (recherche : aucune occurrence trouvée dans le HTML — à confirmer sur le site live) |
+| Basse | Ajouter des URLs canoniques (`<link rel="canonical">`) | Toutes les pages (desktop + mobile) |
+| Basse | Ajouter H1 sur les pages desktop sans H1 | `animation-peinture.html`, `didgeridoo.html`, `cuisine.html`, `home.html`, `presentation.html`, `contact.html`, `activites.html`, `photo.html` |
