@@ -19,35 +19,6 @@
 
 ---
 
-## Détail des actions restantes
-
-### 2 — Sitemap
-- Supprimer les 7 URLs des pages artistes individuelles (plus accessibles depuis `artistes.html`)
-- Ajouter `home.html`
-- Ajouter les URLs des pages `mobile/`
-- Vérifier que toutes les pages actives sont listées
-
-### 3 — H1 manquants (desktop uniquement)
-Pages desktop sans `<h1>` visible :
-- `animation-peinture.html`
-- `didgeridoo.html`
-- `cuisine.html`
-- `home.html`
-- `presentation.html`
-- `contact.html`
-- `activites.html`
-- `photo.html`
-
-> Les équivalents mobiles ont tous un H1. Le desktop reste à traiter si une refonte est envisagée.
-
-### 4 — Alt images (desktop uniquement)
-- `home.html` : 4 images (`Geckomini.jpg`, `Serpentmini.jpg`, `Libellulemini.jpg`, `Bhpetitmini.jpg`) sans attribut `alt`
-- `photo.html` : alt = noms de fichiers bruts, à remplacer par des descriptions lisibles
-
-> Les photos mobiles (`mobile/photos.html`) ont toutes des `alt` descriptifs.
-
----
-
 ## Ce qui a été fait sur le mobile (2026-03-06)
 
 ### Pages créées dans `mobile/`
@@ -60,7 +31,6 @@ Pages desktop sans `<h1>` visible :
 | `artistes.html` | Artistes aborigènes - Aboriginal Way, portraits et vidéos | ✅ (noms dans description) | ✅ |
 | `animation-peinture.html` | Animation Peinture Aborigène - Aboriginal Way, ateliers artistiques | ✅ | ✅ |
 | `didgeridoo.html` | Cours de Didgeridoo - Aboriginal Way, apprendre le souffle circulaire | ✅ | ✅ |
-| `cuisine.html` | Cuisine Aborigène - Aboriginal Way, saveurs bush tucker d'Australie | ✅ | ✅ |
 | `activites.html` | Activités Culturelles - Aboriginal Way, cultures aborigènes d'Australie | ✅ | ✅ |
 | `contact.html` | Contacter Aboriginal Way - Expositions, cours didgeridoo, animations | ✅ | ✅ |
 | `partenaires.html` | Partenaires - Aboriginal Way, nos soutiens et associations | ✅ | ✅ |
