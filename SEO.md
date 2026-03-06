@@ -72,4 +72,4 @@
 |----------|--------|-----------|
 | Moyenne | Supprimer les mentions Atelier du Héron | Pages desktop (recherche : aucune occurrence trouvée dans le HTML — à confirmer sur le site live) |
 | Moyenne | Supprimer les mentions Yourtes | Pages desktop (recherche : aucune occurrence trouvée dans le HTML — à confirmer sur le site live) |
-| Basse | Ajouter Twitter Cards sur les autres pages mobiles (partage réseaux) | Pages mobiles de contenu |
+| ✅ | Twitter Cards sur toutes les pages mobiles | `mobile/*.html` (11 pages) |
