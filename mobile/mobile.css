@@ -197,6 +197,12 @@ li { color: #eee; line-height: 1.7; font-size: 0.95rem; }
   border-radius: 4px;
 }
 
+.home-photos.single img {
+  grid-column: span 2;
+  grid-row: span 2;
+  height: auto;
+}
+
 /* ── NAV (index) ── */
 nav {
   background-color: rgba(0,0,0,0.55);
