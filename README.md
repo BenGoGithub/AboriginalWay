@@ -20,7 +20,7 @@ Le site date d'environ 2008-2012 et a été archivé via HTTrack. Il repose sur 
 | `sitemap.xml` | Refonte complète : suppression des 7 pages artistes individuelles, ajout `home.html`, ajout des 11 pages mobiles — 31 URLs au total |
 | `robots.txt` | Ajout `Disallow: /logs/` pour exclure les statistiques de trafic de l'indexation |
 | `pinterest-d243d.html` | Correction attribut `lang` |
-| `mobile/` | **Création du site mobile dédié** : 12 pages HTML5 + 1 CSS partagé. H1, meta description, Open Graph et JSON-LD sur chaque page. Vidéos responsives, galerie photos CSS grid sans jQuery. Voir `mobile/README.md`. |
+| `mobile/` | **Création du site mobile dédié** : 11 pages HTML5 + 1 CSS partagé (cuisine supprimée). H1, meta description, canonical, Open Graph et JSON-LD sur chaque page. Vidéos responsives, galerie photos CSS grid sans jQuery. Voir `mobile/README.md`. |
 
 ---
 

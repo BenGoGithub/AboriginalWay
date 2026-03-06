@@ -15,7 +15,7 @@
 | 5 | Ajouter les balises Open Graph | ✅ Fait | `index.html` + `mobile/index.html` |
 | 6 | Supprimer le widget AddThis | ✅ Fait | `index.html` |
 | 7 | Ajouter un bloc JSON-LD Organization sur la page d'accueil | ✅ Fait | `index.html` + `mobile/index.html` |
-| 8 | Créer les pages mobiles dédiées avec meta SEO complètes | ✅ Fait | `mobile/` (12 pages) |
+| 8 | Créer les pages mobiles dédiées avec meta SEO complètes | ✅ Fait | `mobile/` (11 pages — cuisine supprimée) |
 
 ---
 
