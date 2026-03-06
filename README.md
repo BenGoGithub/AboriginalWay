@@ -21,6 +21,23 @@ Le site date d'environ 2008-2012 et a été archivé via HTTrack. Il repose sur 
 
 ---
 
+## Organisation Git
+
+### Stratégie à 3 branches
+
+| Branche | Rôle |
+|---------|------|
+| `main` | Production — code stable déployé |
+| `actualisation` | Mises à jour du site existant (contenu, corrections, SEO) |
+| `refonte-mobile` | Page mobile dédiée (`/mobile/index.html`) |
+
+### Ordre de travail
+
+1. **Merger `actualisation` en premier** — partir d'un contenu à jour avant de construire la version mobile
+2. **Créer/merger `refonte-mobile` ensuite** — la page mobile reflète le contenu final
+
+---
+
 ## Structure actuelle
 
 ```
