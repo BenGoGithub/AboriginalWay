@@ -15,8 +15,10 @@ Le site date d'environ 2008-2012 et a été archivé via HTTrack. Il repose sur 
 | `site/ref/documents/exposition.html` | Ajout warning artistes décédés ; correction lien contact (`mailto:` manquant) |
 | `site/ref/documents/photo.html` | Ajout warning artistes décédés |
 | `site/ref/documents/presentation.html` | Ajout de la date de fondation de l'association : 2007 |
-| `index.html` | Suppression widget AddThis et iframe Facebook Like obsolètes ; redirection JS vers `mobile/index.html` pour `≤ 768px` |
-| `sitemap.xml` | Correction XML invalide, ajout pages manquantes |
+| `index.html` | Suppression widget AddThis et iframe Facebook Like obsolètes ; redirection JS vers `mobile/index.html` pour `≤ 768px` ; ajout Open Graph complet + JSON-LD `Organization` (schema.org) |
+| `site/ref/documents/home.html` | Ajout des 4 attributs `alt` manquants sur les images miniatures |
+| `sitemap.xml` | Refonte complète : suppression des 7 pages artistes individuelles, ajout `home.html`, ajout des 11 pages mobiles — 31 URLs au total |
+| `robots.txt` | Ajout `Disallow: /logs/` pour exclure les statistiques de trafic de l'indexation |
 | `pinterest-d243d.html` | Correction attribut `lang` |
 | `mobile/` | **Création du site mobile dédié** : 12 pages HTML5 + 1 CSS partagé. H1, meta description, Open Graph et JSON-LD sur chaque page. Vidéos responsives, galerie photos CSS grid sans jQuery. Voir `mobile/README.md`. |
 
@@ -45,8 +47,8 @@ Le site date d'environ 2008-2012 et a été archivé via HTTrack. Il repose sur 
 AboriginalWay/
 ├── index.html              # Point d'entrée (layout iframe + redirection mobile)
 ├── general.css             # CSS racine (dupliqué)
-├── sitemap.xml             # Sitemap basique (15 URLs)
-├── robots.txt              # Minimal (référence sitemap uniquement)
+├── sitemap.xml             # Sitemap complet (31 URLs : desktop + mobile)
+├── robots.txt              # Disallow /logs/, référence sitemap
 ├── mobile/                 # Site mobile dédié (≤ 768px)
 │   ├── mobile.css          # CSS partagé
 │   ├── index.html          # Accueil mobile (Open Graph, JSON-LD)
@@ -174,22 +176,23 @@ AboriginalWay/
 
 ### Phase 2 - Accessibilité (WCAG 2.1 AA)
 
-- [ ] Ajouter `lang="fr"` sur toutes les balises `<html>`
+- [ ] Ajouter `lang="fr"` sur toutes les balises `<html>` *(fait sur mobile, desktop à compléter)*
 - [ ] Implémenter la navigation clavier complète
 - [ ] Ajouter des skip links
 - [ ] Vérifier et corriger les contrastes de couleurs
-- [ ] Ajouter des `alt` descriptifs sur toutes les images
+- [x] Ajouter des `alt` descriptifs sur les images *(fait sur mobile + `home.html` desktop)*
 - [ ] Remplacer les menus hover-only par des menus accessibles (focus + aria)
 
 ### Phase 3 - SEO & Contenu
 
-- [x] Ajouter `<meta name="description">` et `<title>` pertinents sur chaque page *(fait sur les pages réécrites)*
-- [ ] Implémenter les balises Open Graph et Twitter Card
-- [ ] Construire une hiérarchie de titres cohérente (H1 > H2 > H3)
-- [x] Régénérer le `sitemap.xml` complet
-- [ ] Configurer `robots.txt` avec directives appropriées
+- [x] Ajouter `<meta name="description">` et `<title>` pertinents sur chaque page *(toutes les pages mobiles + pages desktop réécrites)*
+- [x] Implémenter les balises Open Graph *(`index.html` + `mobile/index.html`)*
+- [ ] Implémenter les Twitter Cards
+- [ ] Construire une hiérarchie de titres cohérente (H1 > H2 > H3) *(fait sur mobile, desktop à traiter)*
+- [x] Régénérer le `sitemap.xml` complet *(31 URLs : desktop + mobile, sans artistes individuels)*
+- [x] Configurer `robots.txt` avec directives appropriées *(Disallow /logs/)*
 - [ ] Ajouter des URLs canoniques
-- [ ] Ajouter des données structurées Schema.org (artistes, expositions, organisation)
+- [x] Ajouter des données structurées Schema.org Organisation *(JSON-LD sur `index.html` + `mobile/index.html`)*
 - [x] Corriger ou supprimer les liens cassés *(liens artistes, mailto contact)*
 
 ### Phase 3b - Contenu à modifier
