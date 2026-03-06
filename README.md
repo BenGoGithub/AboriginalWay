@@ -53,14 +53,15 @@ AboriginalWay/
 | Pas de skip links | Impossible de passer la navigation |
 | Contrastes non vérifiés | Couleurs hardcodées (`#9B1A1B`, `#8A97B3`) sans test WCAG |
 
-### CRITIQUE - Responsive / Mobile
+### CRITIQUE - Mobile
+
+> **Approche retenue : page mobile dédiée** (`/mobile/index.html`) avec redirection automatique depuis `index.html`. Le site desktop existant n'est pas refondu en responsive.
 
 | Problème | Exemple |
 |----------|---------|
-| Pas de `<meta viewport>` | Absent sur toutes les pages sauf `pinterest-d243d.html` |
+| Pas de version mobile | Layout fixe 920px, inutilisable sur smartphone |
+| Pas de redirection device | Aucune détection User-Agent ou `matchMedia` |
 | Layout en positionnement absolu | `#bodytexte { top:70px; left:300px; width:620px; }` |
-| Largeur fixe 920px | Aucun breakpoint, aucune media query |
-| Pas de Flexbox/Grid | Mise en page via tables et `position: absolute` |
 | Images non responsives | Pas de `srcset`, pas de `<picture>`, pas de lazy loading |
 | Layout principal en iframe | Le contenu est chargé dans un `<iframe>` rigide |
 
@@ -128,10 +129,12 @@ AboriginalWay/
 
 ### Phase 1 - Refonte structurelle
 
+> **Approche mobile retenue :** pas de refonte responsive du site existant. Une page dédiée `/mobile/index.html` sera créée, avec une redirection automatique depuis `index.html` selon le type d'appareil détecté (User-Agent / `matchMedia`).
+
 - [x] Migrer vers **HTML5** avec DOCTYPE uniforme *(partenaires, artistes)*
 - [ ] Remplacer le layout iframe par une **architecture SPA ou multi-pages** classique
-- [ ] Adopter un layout **CSS Grid / Flexbox** responsive
-- [ ] Ajouter `<meta name="viewport" content="width=device-width, initial-scale=1">`
+- [ ] Créer `/mobile/index.html` — version mobile dédiée du site
+- [ ] Ajouter dans `index.html` une redirection JS vers `/mobile/index.html` pour les appareils mobiles
 - [ ] Restructurer avec des balises sémantiques (`<header>`, `<nav>`, `<main>`, `<footer>`, `<article>`)
 - [ ] Unifier l'encodage en **UTF-8**
 - [ ] Corriger les noms de fichiers (supprimer espaces, accents, doubles points)
@@ -194,7 +197,7 @@ AboriginalWay/
 | CSS | Un fichier dupliqué, pas de variables | CSS custom properties, méthodologie BEM |
 | JavaScript | Inline handlers, jQuery, Flash | Vanilla JS ES6+, modules |
 | Images | JPG/PNG non optimisés | WebP + fallback, lazy loading |
-| Responsive | Aucun | Mobile-first avec breakpoints |
+| Responsive | Aucun | Page mobile dédiée `/mobile/index.html` + redirection JS |
 | SEO | Minimal | Meta tags, Open Graph, Schema.org, sitemap complet |
 | Accessibilité | Non conforme | WCAG 2.1 AA |
 | Sécurité | HTTP, inline scripts, Flash | HTTPS, CSP, SRI |
