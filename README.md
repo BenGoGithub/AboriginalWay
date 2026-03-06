@@ -187,11 +187,11 @@ AboriginalWay/
 
 - [x] Ajouter `<meta name="description">` et `<title>` pertinents sur chaque page *(toutes les pages mobiles + pages desktop réécrites)*
 - [x] Implémenter les balises Open Graph *(`index.html` + `mobile/index.html`)*
-- [ ] Implémenter les Twitter Cards
-- [ ] Construire une hiérarchie de titres cohérente (H1 > H2 > H3) *(fait sur mobile, desktop à traiter)*
+- [x] Implémenter les Twitter Cards *(`index.html` + `mobile/index.html`)*
+- [x] Construire une hiérarchie de titres cohérente — H1 sur toutes les pages *(mobile + 8 pages desktop)*
 - [x] Régénérer le `sitemap.xml` complet *(31 URLs : desktop + mobile, sans artistes individuels)*
 - [x] Configurer `robots.txt` avec directives appropriées *(Disallow /logs/)*
-- [ ] Ajouter des URLs canoniques
+- [x] Ajouter des URLs canoniques *(toutes les pages mobiles + desktop)*
 - [x] Ajouter des données structurées Schema.org Organisation *(JSON-LD sur `index.html` + `mobile/index.html`)*
 - [x] Corriger ou supprimer les liens cassés *(liens artistes, mailto contact)*
 

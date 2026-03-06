@@ -10,7 +10,7 @@
 |---|--------|------|--------------------|
 | 1 | Corriger l'encodage des caractères accentués cassés | ✅ Fait | `index.html`, `home.html` |
 | 2 | Reconstruire le sitemap (HTTPS, supprimer artistes individuels, ajouter `home.html`, pages mobiles) | ✅ Fait | `sitemap.xml` |
-| 3 | Ajouter un H1 visible sur chaque page de contenu | ✅ Fait (mobile) / ❌ Desktop | `mobile/*.html` (tous) — desktop non traité |
+| 3 | Ajouter un H1 visible sur chaque page de contenu | ✅ Fait | `mobile/*.html` + 8 pages desktop (home, contact, didgeridoo, animation-peinture, cuisine, activites, photo, presentation) |
 | 4 | Ajouter `alt` pertinents sur les images principales | ✅ Fait | `mobile/photos.html` (27 photos), `home.html` (4 images corrigées) |
 | 5 | Ajouter les balises Open Graph | ✅ Fait | `index.html` + `mobile/index.html` |
 | 6 | Supprimer le widget AddThis | ✅ Fait | `index.html` |
@@ -102,5 +102,4 @@ Pages desktop sans `<h1>` visible :
 |----------|--------|-----------|
 | Moyenne | Supprimer les mentions Atelier du Héron | Pages desktop (recherche : aucune occurrence trouvée dans le HTML — à confirmer sur le site live) |
 | Moyenne | Supprimer les mentions Yourtes | Pages desktop (recherche : aucune occurrence trouvée dans le HTML — à confirmer sur le site live) |
-| Basse | Ajouter des URLs canoniques (`<link rel="canonical">`) | Toutes les pages (desktop + mobile) |
-| Basse | Ajouter H1 sur les pages desktop sans H1 | `animation-peinture.html`, `didgeridoo.html`, `cuisine.html`, `home.html`, `presentation.html`, `contact.html`, `activites.html`, `photo.html` |
+| Basse | Ajouter Twitter Cards sur les autres pages mobiles (partage réseaux) | Pages mobiles de contenu |
