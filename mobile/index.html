@@ -3,154 +3,73 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Aboriginal Way - Association de promotion des cultures aborigènes d'Australie">
-  <title>Aboriginal Way - Le Chemin Aborigène</title>
+  <title>Aboriginal Way - Le Chemin Aborigène, cultures australiennes</title>
+  <meta name="description" content="Aboriginal Way, association loi 1901 fondée en 2007. Art, expositions, didgeridoo et animations autour des cultures aborigènes d'Australie.">
+  <meta property="og:title" content="Aboriginal Way - Le Chemin Aborigène">
+  <meta property="og:description" content="Association de promotion des cultures aborigènes d'Australie — art, expositions, didgeridoo, animations.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aboriginalway.fr/mobile/">
+  <meta property="og:image" content="https://aboriginalway.fr/site/ref/image/Bhgrand.jpg">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aboriginal Way - Le Chemin Aborigène">
+  <meta name="twitter:description" content="Association loi 1901 fondée en 2007. Art, expositions, didgeridoo et animations autour des cultures aborigènes d'Australie.">
+  <meta name="twitter:image" content="https://aboriginalway.fr/site/ref/image/Bhgrand.jpg">
+  <link rel="canonical" href="https://aboriginalway.fr/mobile/">
   <link rel="icon" type="image/x-icon" href="../site/ref/image/favicon.ico">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: "Century Gothic", Arial, sans-serif;
-      background: #1a0a00 url(../site/ref/image/Fond2.jpg) center/cover fixed;
-      color: #fff;
-      min-height: 100vh;
+  <link rel="stylesheet" href="mobile.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Aboriginal Way",
+    "url": "https://aboriginalway.fr",
+    "foundingDate": "2007",
+    "description": "Association loi 1901 de promotion des cultures aborigènes d'Australie",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "aboriginalway@free.fr",
+      "contactType": "customer support"
     }
-
-    header {
-      background-color: rgba(0,0,0,0.65);
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      border-bottom: 1px solid #8B4513;
-    }
-
-    header img { width: 44px; height: auto; }
-
-    header h1 {
-      font-size: 1.3rem;
-      font-weight: bold;
-      color: #fff;
-      line-height: 1.2;
-    }
-
-    header h1 span {
-      display: block;
-      font-size: 0.75rem;
-      font-weight: normal;
-      color: #ccc;
-    }
-
-    main {
-      padding: 20px 16px;
-    }
-
-    .intro {
-      background-color: rgba(0,0,0,0.55);
-      border-radius: 6px;
-      padding: 16px;
-      margin-bottom: 24px;
-      text-align: center;
-    }
-
-    .intro p { margin: 6px 0; }
-    .intro .artists { font-size: 0.8rem; color: #ccc; }
-    .intro .tagline { font-size: 1.4rem; font-weight: bold; }
-    .intro .subtitle { font-size: 0.9rem; color: #ddd; }
-
-    .photos {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
-      margin-bottom: 24px;
-    }
-
-    .photos img {
-      width: 100%;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 4px;
-    }
-
-    nav {
-      background-color: rgba(0,0,0,0.55);
-      border-radius: 6px;
-      overflow: hidden;
-    }
-
-    nav a {
-      display: block;
-      padding: 14px 16px;
-      color: #fff;
-      text-decoration: none;
-      font-size: 1rem;
-      border-bottom: 1px solid rgba(139,69,19,0.4);
-      transition: background 0.2s;
-    }
-
-    nav a:last-child { border-bottom: none; }
-    nav a:active { background-color: rgba(139,69,19,0.5); }
-
-    nav .section-title {
-      background-color: rgba(139,69,19,0.3);
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #ccc;
-      padding: 6px 16px;
-      border-bottom: 1px solid rgba(139,69,19,0.4);
-    }
-
-    nav a .arrow { float: right; color: #8B4513; }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.75rem;
-      color: #888;
-    }
-  </style>
+  }
+  </script>
 </head>
 <body>
 
   <header>
-    <img src="../site/ref/image/FinalTransp.gif" alt="Logo Aboriginal Way">
-    <h1>Aboriginal Way <span>Le Chemin Aborigène</span></h1>
+    <img class="logo" src="../site/ref/image/FinalTransp.gif" alt="Logo Aboriginal Way">
+    <div class="site-title">Aboriginal Way <span>Le Chemin Aborigène</span></div>
   </header>
 
   <main>
 
-    <div class="intro">
-      <p class="artists">Lindsay Bunn · Penny Green · Sandy Walker Japanardi<br>Jimmy Moduk · Johnny Watjpurali · Dhinawan · Roy Burnyila</p>
+    <div class="card intro">
       <p class="tagline">Aboriginal Way</p>
       <p class="subtitle">Association loi 1901 de promotion des cultures aborigènes</p>
     </div>
 
-    <div class="photos">
+    <div class="home-photos single">
       <img src="../site/ref/image/Geckomini.jpg" alt="Art aborigène - Gecko">
-      <img src="../site/ref/image/Serpentmini.jpg" alt="Art aborigène - Serpent">
-      <img src="../site/ref/image/Libellulemini.jpg" alt="Art aborigène - Libellule">
-      <img src="../site/ref/image/Bhpetitmini.jpg" alt="Art aborigène">
     </div>
 
     <nav>
-      <div class="section-title">Activités</div>
-      <a href="../site/ref/documents/activites.html">Cultures <span class="arrow">›</span></a>
-      <a href="../site/ref/documents/animation-peinture.html">Animation peinture <span class="arrow">›</span></a>
-      <a href="../site/ref/documents/didgeridoo.html">Didgeridoo <span class="arrow">›</span></a>
+      <div class="section-label">Activités</div>
+      <a href="activites.html">Cultures <span class="arrow">›</span></a>
+      <a href="animation-peinture.html">Animation peinture <span class="arrow">›</span></a>
+      <a href="didgeridoo.html">Didgeridoo <span class="arrow">›</span></a>
 
-      <div class="section-title">Exposition</div>
-      <a href="../site/ref/documents/exposition.html">Exposition <span class="arrow">›</span></a>
-      <a href="../site/ref/documents/artistes.html">Artistes &amp; Vidéos <span class="arrow">›</span></a>
-      <a href="../site/ref/documents/photo.html">Photos <span class="arrow">›</span></a>
+      <div class="section-label">Exposition</div>
+      <a href="exposition.html">Exposition <span class="arrow">›</span></a>
+      <a href="artistes.html">Artistes &amp; Vidéos <span class="arrow">›</span></a>
+      <a href="photos.html">Photos <span class="arrow">›</span></a>
 
-      <div class="section-title">L'Association</div>
-      <a href="../site/ref/documents/presentation.html">Présentation <span class="arrow">›</span></a>
-      <a href="../site/ref/documents/membres.html">Pour nos membres <span class="arrow">›</span></a>
-      <a href="../site/ref/documents/partenaires.html">Partenaires <span class="arrow">›</span></a>
+      <div class="section-label">L'Association</div>
+      <a href="presentation.html">Présentation <span class="arrow">›</span></a>
+      <a href="membres.html">Pour nos membres <span class="arrow">›</span></a>
+      <a href="partenaires.html">Partenaires <span class="arrow">›</span></a>
 
-      <div class="section-title">Contact</div>
-      <a href="../site/ref/documents/contact.html">Nous contacter <span class="arrow">›</span></a>
+      <div class="section-label">Contact</div>
+      <a href="contact.html">Nous contacter <span class="arrow">›</span></a>
     </nav>
 
   </main>
