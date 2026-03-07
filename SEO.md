@@ -19,6 +19,11 @@
 | 9 | Twitter Cards sur toutes les pages mobiles | ✅ Fait | `mobile/*.html` (11 pages) |
 | 10 | Fix menu et pages artistes desktop | ✅ Fait | `site/ref/documents/artistes.html` |
 | 11 | Ajout flyer et mise en page contact desktop | ✅ Fait | `site/ref/documents/contact.html` |
+| 12 | SEO activites.html : title, description, Open Graph, Twitter Card, alt image, H1 | ✅ Fait | `site/ref/documents/activites.html` |
+| 13 | SEO toutes les pages desktop : Open Graph, Twitter Card, canonical, robots, titles, descriptions | ✅ Fait | `home`, `exposition`, `contact`, `artistes`, `didgeridoo`, `animation-peinture`, `photo`, `membres`, `partenaires`, `presentation`, `liens`, `temps` |
+| 14 | Alt descriptifs sur les 26 images de la galerie photo | ✅ Fait | `site/ref/documents/photo.html` |
+| 15 | H1 descriptif sur liens.html | ✅ Fait | `site/ref/documents/liens.html` |
+| 16 | membres.html : noindex (page en construction) | ✅ Fait | `site/ref/documents/membres.html` |
 
 ---
 
