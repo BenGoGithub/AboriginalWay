@@ -33,6 +33,9 @@
 }
 </script>
 <script>
+// Dossier de base du site ('' si à la racine du domaine, '/aboriginalway' si sous-dossier)
+const BASE = '';
+
 // Table de routage : pathname → fichier source + image sidebar
 const routes = {
   '/':                   { src: 'site/ref/documents/home.html',              img: 'site/ref/image/Bhgrand.jpg'   },
@@ -66,7 +69,7 @@ async function navigate(path, pushState = true) {
 
   // Mise à jour URL et <title>
   const pageTitle = doc.title || 'Aboriginal Way';
-  if (pushState) history.pushState({ path }, pageTitle, path);
+  if (pushState) history.pushState({ path }, pageTitle, BASE + (path === '/' ? '/' : path));
   document.title = pageTitle;
 
   // Ré-exécuter les scripts pour la galerie photo
@@ -104,7 +107,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Charge la page correspondant à l'URL courante (accès direct, F5)
-  navigate(window.location.pathname, false);
+  // Retire le BASE du pathname pour obtenir la route locale (/exposition, /, etc.)
+  const initPath = window.location.pathname.replace(BASE, '') || '/';
+  navigate(initPath, false);
 });
 </script>
 </head>
