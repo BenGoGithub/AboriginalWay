@@ -1,6 +1,6 @@
 # Suivi SEO — Aboriginal Way
 
-## Dernière mise à jour : 2026-03-07 — Branche `actualisation` déployée (merge vers `main` à faire)
+## Dernière mise à jour : 2026-03-07 — Branche `seo-routing` active (merge vers `actualisation` → `main` à faire)
 
 ---
 
@@ -24,6 +24,13 @@
 | 14 | Alt descriptifs sur les 26 images de la galerie photo | ✅ Fait | `site/ref/documents/photo.html` |
 | 15 | H1 descriptif sur liens.html | ✅ Fait | `site/ref/documents/liens.html` |
 | 16 | membres.html : noindex (page en construction) | ✅ Fait | `site/ref/documents/membres.html` |
+| 17 | Routage SPA History API / pushState — URLs propres indexables | ✅ Fait | `index.html`, `.htaccess`, `sitemap.xml` |
+| 18 | Galerie photos : remplacement VisualLightBox/jQuery par CSS grid + lightbox vanilla JS | ✅ Fait | `site/ref/documents/photo.html`, `index.html` |
+| 19 | Fond de page (Fond.jpg) appliqué via JS avec chemin absolu | ✅ Fait | `index.html`, `site/ref/style/general.css` |
+| 20 | Exposition : vidéo et textes centrés | ✅ Fait | `site/ref/documents/exposition.html` |
+| 21 | Contact : brochure pleine largeur (580px) | ✅ Fait | `site/ref/documents/contact.html` |
+| 22 | Mobile footer : suppression "fondée en 2007" | ✅ Fait | `mobile/*.html` (11 fichiers) |
+| 23 | Google Tag Manager (GTM-5P7M6QCB) installé | ✅ Fait | `index.html`, `mobile/*.html` (11 fichiers) |
 
 ---
 
