@@ -89,16 +89,7 @@ async function navigate(path, pushState = true) {
       try { el.setAttribute('src', new URL(el.getAttribute('src'), base).href); } catch (e) {}
     });
 
-    // Appliquer le background du <body> fetché sur #bodytexte
-    // (#content peut s'effondrer à 0px si ses enfants sont position:absolute)
-    const bodyStyle = doc.body.getAttribute('style') || '';
-    const resolvedBodyStyle = bodyStyle.replace(/url\(['"]?([^'")]+)['"]?\)/g, (match, url) => {
-      try { return `url('${new URL(url, base).href}')`; } catch (e) { return match; }
-    });
-    document.getElementById('bodytexte').style.cssText = resolvedBodyStyle;
-
     const content = document.getElementById('content');
-    content.style.cssText = 'width:100%;height:100%;overflow-y:auto;';
     content.innerHTML = source.innerHTML;
 
     // Mise à jour URL et <title>
