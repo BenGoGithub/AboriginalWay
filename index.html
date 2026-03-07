@@ -36,20 +36,31 @@
 // Dossier de base du site ('' si à la racine du domaine, '/aboriginalway' si sous-dossier)
 const BASE = '';
 
-// Table de routage : pathname → fichier source + image sidebar
+// Table de routage : pathname → fichier source (absolu) + image sidebar
 const routes = {
-  '/':                   { src: 'site/ref/documents/home.html',              img: 'site/ref/image/Bhgrand.jpg'   },
-  '/exposition':         { src: 'site/ref/documents/exposition.html',         img: 'site/ref/image/Serpent.jpg'   },
-  '/artistes':           { src: 'site/ref/documents/artistes.html',           img: 'site/ref/image/Serpent.jpg'   },
-  '/photos':             { src: 'site/ref/documents/photo.html',              img: 'site/ref/image/Serpent.jpg'   },
-  '/animation-peinture': { src: 'site/ref/documents/animation-peinture.html', img: 'site/ref/image/Gecko.jpg'     },
-  '/didgeridoo':         { src: 'site/ref/documents/didgeridoo.html',         img: 'site/ref/image/Gecko.jpg'     },
-  '/activites':          { src: 'site/ref/documents/activites.html',          img: 'site/ref/image/Gecko.jpg'     },
-  '/presentation':       { src: 'site/ref/documents/presentation.html',       img: 'site/ref/image/Libellule.jpg' },
-  '/membres':            { src: 'site/ref/documents/membres.html',            img: 'site/ref/image/Libellule.jpg' },
-  '/partenaires':        { src: 'site/ref/documents/partenaires.html',        img: 'site/ref/image/Libellule.jpg' },
-  '/contact':            { src: 'site/ref/documents/contact.html',            img: 'site/ref/image/Bhpetit.jpg'   },
+  '/':                   { src: '/site/ref/documents/home.html',              img: 'site/ref/image/Bhgrand.jpg'   },
+  '/exposition':         { src: '/site/ref/documents/exposition.html',         img: 'site/ref/image/Serpent.jpg'   },
+  '/artistes':           { src: '/site/ref/documents/artistes.html',           img: 'site/ref/image/Serpent.jpg'   },
+  '/photos':             { src: '/site/ref/documents/photo.html',              img: 'site/ref/image/Serpent.jpg'   },
+  '/animation-peinture': { src: '/site/ref/documents/animation-peinture.html', img: 'site/ref/image/Gecko.jpg'     },
+  '/didgeridoo':         { src: '/site/ref/documents/didgeridoo.html',         img: 'site/ref/image/Gecko.jpg'     },
+  '/activites':          { src: '/site/ref/documents/activites.html',          img: 'site/ref/image/Gecko.jpg'     },
+  '/presentation':       { src: '/site/ref/documents/presentation.html',       img: 'site/ref/image/Libellule.jpg' },
+  '/membres':            { src: '/site/ref/documents/membres.html',            img: 'site/ref/image/Libellule.jpg' },
+  '/partenaires':        { src: '/site/ref/documents/partenaires.html',        img: 'site/ref/image/Libellule.jpg' },
+  '/contact':            { src: '/site/ref/documents/contact.html',            img: 'site/ref/image/Bhpetit.jpg'   },
 };
+
+// Charge un script de manière séquentielle (respecte l'ordre jQuery → plugin)
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = src;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.body.appendChild(script);
+  });
+}
 
 async function navigate(path, pushState = true) {
   const route = routes[path] || routes['/'];
@@ -57,29 +68,37 @@ async function navigate(path, pushState = true) {
   // Image sidebar
   document.getElementById('visuel').src = route.img;
 
-  // Chargement du contenu
-  const response = await fetch(route.src);
-  const html = await response.text();
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(html, 'text/html');
+  try {
+    // Chargement du contenu via chemin absolu
+    const response = await fetch(route.src);
+    if (!response.ok) throw new Error('HTTP ' + response.status);
+    const html = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
 
-  // Extraire #texte si disponible, sinon tout le <body>
-  const source = doc.getElementById('texte') || doc.body;
-  document.getElementById('content').innerHTML = source.innerHTML;
+    // Extraire #texte si disponible, sinon tout le <body>
+    const source = doc.getElementById('texte') || doc.body;
+    document.getElementById('content').innerHTML = source.innerHTML;
 
-  // Mise à jour URL et <title>
-  const pageTitle = doc.title || 'Aboriginal Way';
-  if (pushState) history.pushState({ path }, pageTitle, BASE + (path === '/' ? '/' : path));
-  document.title = pageTitle;
+    // Mise à jour URL et <title>
+    const pageTitle = doc.title || 'Aboriginal Way';
+    if (pushState) history.pushState({ path }, pageTitle, BASE + (path === '/' ? '/' : path));
+    document.title = pageTitle;
 
-  // Ré-exécuter les scripts pour la galerie photo
-  if (path === '/photos') {
-    const script = document.createElement('script');
-    script.src = 'site/ref/documents/engine/js/visuallightbox.js';
-    document.body.appendChild(script);
+    // Galerie photo : charger jQuery puis VisualLightBox en séquence
+    if (path === '/photos') {
+      if (typeof jQuery === 'undefined') {
+        await loadScript('/site/ref/documents/engine/js/jquery.min.js');
+      }
+      await loadScript('/site/ref/documents/engine/js/visuallightbox.js');
+    }
+
+    document.getElementById('content').scrollTop = 0;
+
+  } catch (e) {
+    document.getElementById('content').innerHTML =
+      '<p style="padding:20px;color:#9B1A1B">Erreur de chargement (' + e.message + '). Veuillez réessayer.</p>';
   }
-
-  document.getElementById('content').scrollTop = 0;
 }
 
 // Bouton retour / avant navigateur
