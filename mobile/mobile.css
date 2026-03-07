@@ -110,6 +110,7 @@ li { color: #eee; line-height: 1.7; font-size: 0.95rem; }
   font-weight: bold;
   font-size: 0.95rem;
   color: #fff;
+  text-align: center;
 }
 .artist-list li:last-child { border-bottom: none; }
 
