@@ -16,7 +16,7 @@
 <link rel="canonical" href="https://aboriginalway.fr/">
 <title>Aboriginal Way - Le Chemin Aborigène, cultures d'Australie</title>
 <link rel="icon" type="image/x-icon" href="/site/ref/image/favicon.ico">
-<link href="site/ref/style/general.css" rel="stylesheet" type="text/css">
+<link href="site/ref/style/general.css" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -32,71 +32,129 @@
   }
 }
 </script>
-<script type="text/javascript">
-if (window.matchMedia("(max-width: 768px)").matches) {
-  window.location.replace("mobile/index.html");
+<script>
+// Table de routage : pathname → fichier source + image sidebar
+const routes = {
+  '/':                   { src: 'site/ref/documents/home.html',              img: 'site/ref/image/Bhgrand.jpg'   },
+  '/exposition':         { src: 'site/ref/documents/exposition.html',         img: 'site/ref/image/Serpent.jpg'   },
+  '/artistes':           { src: 'site/ref/documents/artistes.html',           img: 'site/ref/image/Serpent.jpg'   },
+  '/photos':             { src: 'site/ref/documents/photo.html',              img: 'site/ref/image/Serpent.jpg'   },
+  '/animation-peinture': { src: 'site/ref/documents/animation-peinture.html', img: 'site/ref/image/Gecko.jpg'     },
+  '/didgeridoo':         { src: 'site/ref/documents/didgeridoo.html',         img: 'site/ref/image/Gecko.jpg'     },
+  '/activites':          { src: 'site/ref/documents/activites.html',          img: 'site/ref/image/Gecko.jpg'     },
+  '/presentation':       { src: 'site/ref/documents/presentation.html',       img: 'site/ref/image/Libellule.jpg' },
+  '/membres':            { src: 'site/ref/documents/membres.html',            img: 'site/ref/image/Libellule.jpg' },
+  '/partenaires':        { src: 'site/ref/documents/partenaires.html',        img: 'site/ref/image/Libellule.jpg' },
+  '/contact':            { src: 'site/ref/documents/contact.html',            img: 'site/ref/image/Bhpetit.jpg'   },
+};
+
+async function navigate(path, pushState = true) {
+  const route = routes[path] || routes['/'];
+
+  // Image sidebar
+  document.getElementById('visuel').src = route.img;
+
+  // Chargement du contenu
+  const response = await fetch(route.src);
+  const html = await response.text();
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, 'text/html');
+
+  // Extraire #texte si disponible, sinon tout le <body>
+  const source = doc.getElementById('texte') || doc.body;
+  document.getElementById('content').innerHTML = source.innerHTML;
+
+  // Mise à jour URL et <title>
+  const pageTitle = doc.title || 'Aboriginal Way';
+  if (pushState) history.pushState({ path }, pageTitle, path);
+  document.title = pageTitle;
+
+  // Ré-exécuter les scripts pour la galerie photo
+  if (path === '/photos') {
+    const script = document.createElement('script');
+    script.src = 'site/ref/documents/engine/js/visuallightbox.js';
+    document.body.appendChild(script);
+  }
+
+  document.getElementById('content').scrollTop = 0;
 }
-function change(imagechoisie)
-{
-document.getElementById('visuel').src = imagechoisie
-}
-function showmenu(elmnt)
-{
-document.getElementById(elmnt).style.visibility="visible"
-}
-function hidemenu(elmnt)
-{
-document.getElementById(elmnt).style.visibility="hidden"
-}
+
+// Bouton retour / avant navigateur
+window.addEventListener('popstate', (e) => {
+  navigate(e.state?.path || '/', false);
+});
+
+// Menus déroulants (inchangé)
+function showmenu(elmnt) { document.getElementById(elmnt).style.visibility = 'visible'; }
+function hidemenu(elmnt) { document.getElementById(elmnt).style.visibility = 'hidden'; }
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Redirection mobile
+  if (window.matchMedia('(max-width: 768px)').matches) {
+    window.location.replace('mobile/index.html');
+    return;
+  }
+
+  // Interception des clics sur les liens du menu
+  document.querySelectorAll('a[data-route]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigate(link.getAttribute('data-route'));
+    });
+  });
+
+  // Charge la page correspondant à l'URL courante (accès direct, F5)
+  navigate(window.location.pathname, false);
+});
 </script>
 </head>
 <body>
 <div id="container">
 <div style="left: 548px; width: 372px;" id="logo" class="ligne">
-<h1 class="title"><a href="index.html" target="_self" class="title">Aboriginal
-Way </a><a href="index.html"><img style="border: 0px solid ; width: 55px; height: 49px;" alt="Logo AW" src="/site/ref/image/FinalTransp.gif"></a></h1>
+<h1 class="title"><a href="/" data-route="/" class="title">Aboriginal
+Way </a><a href="/" data-route="/"><img style="border: 0px solid ; width: 55px; height: 49px;" alt="Logo AW" src="/site/ref/image/FinalTransp.gif"></a></h1>
 </div>
 <div id="image" class="ligne"><img src="site/ref/image/Bhgrand.jpg" id="visuel" border="0" height="420" width="280"> </div>
-<div id="bodytexte" class="ligne"> <iframe style="width: 100%; height: 100%; background-color: rgb(255, 255, 255);" name="texte" src="site/ref/documents/home.html" frameborder="0" height="100%" width="100%"></iframe>
+<div id="bodytexte" class="ligne"><div id="content" style="width: 100%; height: 100%; background-color: rgb(255, 255, 255); overflow-y: auto;"></div>
 </div>
 <a name="Animations_Cuisine_Événements_Cultures"></a>
 <div style="left: 0px; width: 314px;" id="menu" class="ligne"><div onmouseover="showmenu('ssmenuA')" onmouseout="hidemenu('ssmenuA')" id="menuA" class="ligne">
-<div style="top: 0px; height: 68px; left: 0px; width: 303px;" id="menuATitre" class="ligne"> <a id="menu1" href="site/ref/documents/activites.html" target="texte" class="menu" onclick="change('site/ref/image/Gecko.jpg')">Activités</a>
+<div style="top: 0px; height: 68px; left: 0px; width: 303px;" id="menuATitre" class="ligne"> <a id="menu1" href="/activites" data-route="/activites" class="menu">Activités</a>
 </div>
 <div id="ssmenuA" class="ligne">
-<div id="ssmenuATitreA" class="ligne"><a href="site/ref/documents/animation-peinture.html" target="texte" class="ssmenu" onclick="change('site/ref/image/Gecko.jpg')">Animation</a>
+<div id="ssmenuATitreA" class="ligne"><a href="/animation-peinture" data-route="/animation-peinture" class="ssmenu">Animation</a>
 </div>
-<div id="ssmenuATitreB" class="ligne"><a href="site/ref/documents/activites.html" target="texte" class="ssmenu" onclick="change('site/ref/image/Gecko.jpg')">Cultures</a>
+<div id="ssmenuATitreB" class="ligne"><a href="/activites" data-route="/activites" class="ssmenu">Cultures</a>
 </div>
-<div id="ssmenuATitreC" class="ligne"><a href="site/ref/documents/didgeridoo.html" target="texte" class="ssmenu" onclick="change('site/ref/image/Gecko.jpg')">Didgeridoo</a>
+<div id="ssmenuATitreC" class="ligne"><a href="/didgeridoo" data-route="/didgeridoo" class="ssmenu">Didgeridoo</a>
 </div>
 </div>
 </div>
 <div id="menuB" onmouseover="showmenu('ssmenuB')" onmouseout="hidemenu('ssmenuB')" class="ligne">
-<div id="menuBTitre" class="ligne"> <a href="site/ref/documents/exposition.html" target="texte" class="menu" onclick="change('site/ref/image/Serpent.jpg')">Exposition</a>
+<div id="menuBTitre" class="ligne"> <a href="/exposition" data-route="/exposition" class="menu">Exposition</a>
 </div>
 <div id="ssmenuB" class="ligne">
-<div id="ssmenuBTitreA" class="ligne"><a href="site/ref/documents/artistes.html" target="texte" class="ssmenu" onclick="change('site/ref/image/Serpent.jpg')">Artistes
+<div id="ssmenuBTitreA" class="ligne"><a href="/artistes" data-route="/artistes" class="ssmenu">Artistes
 et Vidéos</a> </div>
-<div id="ssmenuBTitreB" class="ligne"><a href="site/ref/documents/photo.html" target="texte" class="ssmenu" onclick="change('site/ref/image/Serpent.jpg')">Photos</a>
+<div id="ssmenuBTitreB" class="ligne"><a href="/photos" data-route="/photos" class="ssmenu">Photos</a>
 </div>
 </div>
 </div>
 <div id="menuC" onmouseover="showmenu('ssmenuC')" onmouseout="hidemenu('ssmenuC')" class="ligne">
-<div id="menuCTitre" class="ligne"> <a href="site/ref/documents/presentation.html" class="menu" target="texte" onclick="change('site/ref/image/Libellule.jpg')">L'Association</a>
+<div id="menuCTitre" class="ligne"> <a href="/presentation" data-route="/presentation" class="menu">L'Association</a>
 </div>
 <div id="ssmenuC" class="ligne">
-<div id="ssmenuCTitreA" class="ligne"><a href="site/ref/documents/presentation.html" target="texte" class="ssmenu" onclick="change('site/ref/image/Libellule.jpg')">Présentation</a>
+<div id="ssmenuCTitreA" class="ligne"><a href="/presentation" data-route="/presentation" class="ssmenu">Présentation</a>
 </div>
-<div id="ssmenuCTitreB" class="ligne"><a href="site/ref/documents/membres.html" target="texte" class="ssmenu" onclick="change('site/ref/image/Libellule.jpg')">Pour
+<div id="ssmenuCTitreB" class="ligne"><a href="/membres" data-route="/membres" class="ssmenu">Pour
 nos membres</a> </div>
-<div id="ssmenuCTitreC" class="ligne"><a href="site/ref/documents/partenaires.html" target="texte" class="ssmenu" onclick="change('site/ref/image/Libellule.jpg')">Partenaires
+<div id="ssmenuCTitreC" class="ligne"><a href="/partenaires" data-route="/partenaires" class="ssmenu">Partenaires
 + liens</a>
 </div>
 </div>
 </div>
 <div id="menuE" class="ligne">
-<div id="menuETitre" class="ligne"> <a href="site/ref/documents/contact.html" class="menu" target="texte" onclick="change('site/ref/image/Bhpetit.jpg')">Contact</a>
+<div id="menuETitre" class="ligne"> <a href="/contact" data-route="/contact" class="menu">Contact</a>
 </div>
 </div>
 <div id="signature" class="ligne">
