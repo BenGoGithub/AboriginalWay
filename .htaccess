@@ -70,9 +70,23 @@ FileETag MTime Size
 # --- Page d'erreur 404 personnalisée ---
 ErrorDocument 404 /index.html
 
-# --- SPA Router : réécriture des URLs propres vers index.html ---
+# --- Redirections 301 : pages desktop → URLs propres (SEO + GTM) ---
 RewriteEngine On
 RewriteBase /
+
+RewriteRule ^site/ref/documents/home\.html$             /                    [R=301,L]
+RewriteRule ^site/ref/documents/exposition\.html$       /exposition          [R=301,L]
+RewriteRule ^site/ref/documents/artistes\.html$         /artistes            [R=301,L]
+RewriteRule ^site/ref/documents/photo\.html$            /photos              [R=301,L]
+RewriteRule ^site/ref/documents/animation-peinture\.html$ /animation-peinture [R=301,L]
+RewriteRule ^site/ref/documents/didgeridoo\.html$       /didgeridoo          [R=301,L]
+RewriteRule ^site/ref/documents/activites\.html$        /activites           [R=301,L]
+RewriteRule ^site/ref/documents/presentation\.html$     /presentation        [R=301,L]
+RewriteRule ^site/ref/documents/membres\.html$          /membres             [R=301,L]
+RewriteRule ^site/ref/documents/partenaires\.html$      /partenaires         [R=301,L]
+RewriteRule ^site/ref/documents/contact\.html$          /contact             [R=301,L]
+
+# --- SPA Router : réécriture des URLs propres vers index.html ---
 
 # Ne pas réécrire index.html lui-même
 RewriteRule ^index\.html$ - [L]
