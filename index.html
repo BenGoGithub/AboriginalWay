@@ -86,7 +86,15 @@ async function navigate(path, pushState = true) {
       try { el.setAttribute('src', new URL(el.getAttribute('src'), base).href); } catch (e) {}
     });
 
-    document.getElementById('content').innerHTML = source.innerHTML;
+    // Appliquer le background du <body> de la page fetchée sur #content
+    const bodyStyle = doc.body.getAttribute('style') || '';
+    const resolvedStyle = bodyStyle.replace(/url\(['"]?([^'")]+)['"]?\)/g, (match, url) => {
+      try { return `url('${new URL(url, base).href}')`; } catch (e) { return match; }
+    });
+    const content = document.getElementById('content');
+    content.style.cssText = 'width:100%;height:100%;overflow-y:auto;' + resolvedStyle;
+
+    content.innerHTML = source.innerHTML;
 
     // Mise à jour URL et <title>
     const pageTitle = doc.title || 'Aboriginal Way';
