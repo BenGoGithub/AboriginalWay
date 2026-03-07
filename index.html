@@ -76,8 +76,11 @@ async function navigate(path, pushState = true) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
 
-    // Extraire #texte si disponible, sinon tout le <body>
-    const source = doc.getElementById('texte') || doc.body;
+    // Extraire #container (parent de #texte) si disponible, sinon tout le <body>
+    // On supprime l'id pour éviter un conflit CSS avec le #container de index.html
+    const container = doc.getElementById('container');
+    if (container) container.removeAttribute('id');
+    const source = container || doc.body;
 
     // Résoudre tous les src relatifs en URLs absolues avant injection
     // (les pages desktop utilisent ../image/ relatif à leur emplacement)
