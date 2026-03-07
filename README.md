@@ -21,6 +21,8 @@ Le site date d'environ 2008-2012 et a été archivé via HTTrack. Il repose sur 
 | `robots.txt` | Ajout `Disallow: /logs/` pour exclure les statistiques de trafic de l'indexation |
 | `pinterest-d243d.html` | Correction attribut `lang` |
 | `mobile/` | **Création du site mobile dédié** : 11 pages HTML5 + 1 CSS partagé (cuisine supprimée). H1, meta description, canonical, Open Graph et JSON-LD sur chaque page. Vidéos responsives, galerie photos CSS grid sans jQuery. Voir `mobile/README.md`. |
+| `site/ref/documents/artistes.html` | Fix menu et mise en page artistes ; correction des liens et affichage des vidéos |
+| `site/ref/documents/contact.html` | Mise en page desktop : ajout flyer et amélioration section contact |
 
 ---
 
@@ -56,7 +58,6 @@ AboriginalWay/
 │   ├── animation-peinture.html
 │   ├── artistes.html
 │   ├── contact.html
-│   ├── cuisine.html
 │   ├── didgeridoo.html
 │   ├── exposition.html
 │   ├── membres.html

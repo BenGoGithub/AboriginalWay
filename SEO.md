@@ -1,6 +1,6 @@
 # Suivi SEO — Aboriginal Way
 
-## Audit réalisé le 2026-03-06
+## Dernière mise à jour : 2026-03-07 — Branche `actualisation` déployée (merge vers `main` à faire)
 
 ---
 
@@ -16,10 +16,13 @@
 | 6 | Supprimer le widget AddThis | ✅ Fait | `index.html` |
 | 7 | Ajouter un bloc JSON-LD Organization sur la page d'accueil | ✅ Fait | `index.html` + `mobile/index.html` |
 | 8 | Créer les pages mobiles dédiées avec meta SEO complètes | ✅ Fait | `mobile/` (11 pages — cuisine supprimée) |
+| 9 | Twitter Cards sur toutes les pages mobiles | ✅ Fait | `mobile/*.html` (11 pages) |
+| 10 | Fix menu et pages artistes desktop | ✅ Fait | `site/ref/documents/artistes.html` |
+| 11 | Ajout flyer et mise en page contact desktop | ✅ Fait | `site/ref/documents/contact.html` |
 
 ---
 
-## Ce qui a été fait sur le mobile (2026-03-06)
+## Ce qui a été fait sur le mobile
 
 ### Pages créées dans `mobile/`
 
@@ -66,10 +69,6 @@
 
 ---
 
-## Actions SEO restantes (priorité)
+## Actions restantes
 
-| Priorité | Action | Périmètre |
-|----------|--------|-----------|
-| Moyenne | Supprimer les mentions Atelier du Héron | Pages desktop (recherche : aucune occurrence trouvée dans le HTML — à confirmer sur le site live) |
-| Moyenne | Supprimer les mentions Yourtes | Pages desktop (recherche : aucune occurrence trouvée dans le HTML — à confirmer sur le site live) |
-| ✅ | Twitter Cards sur toutes les pages mobiles | `mobile/*.html` (11 pages) |
+Aucune action en cours — site à jour et déployé.
