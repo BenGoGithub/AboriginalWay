@@ -71,20 +71,15 @@ FileETag MTime Size
 ErrorDocument 404 /index.html
 
 # --- SPA Router : réécriture des URLs propres vers index.html ---
-<IfModule mod_rewrite.c>
-    Options -MultiViews
-    RewriteEngine On
-    RewriteBase /
+RewriteEngine On
+RewriteBase /
 
-    # Ne pas réécrire les fichiers et dossiers existants
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
+# Ne pas réécrire index.html lui-même
+RewriteRule ^index\.html$ - [L]
 
-    # Ne pas réécrire les ressources statiques
-    RewriteCond %{REQUEST_URI} !^/site/
-    RewriteCond %{REQUEST_URI} !^/mobile/
-    RewriteCond %{REQUEST_URI} !^/logs/
+# Ne pas réécrire les fichiers et dossiers existants
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 
-    # Tout le reste → index.html (le router JS prend le relai)
-    RewriteRule ^ index.html [L]
-</IfModule>
+# Tout le reste → index.html (le router JS prend le relai)
+RewriteRule . /index.html [L]
