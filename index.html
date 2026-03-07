@@ -80,22 +80,53 @@ function setupLightbox() {
 
   document.getElementById('aw-lb-close').addEventListener('click', close);
   lb.addEventListener('click', function(e) { if (e.target === lb) close(); });
-  document.getElementById('aw-lb-prev').addEventListener('click', function(e) { e.stopPropagation(); open(idx - 1); });
-  document.getElementById('aw-lb-next').addEventListener('click', function(e) { e.stopPropagation(); open(idx + 1); });
+  document.getElementById('aw-lb-prev').addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (lb._openFn) lb._openFn(lb._getIdx() - 1);
+  });
+  document.getElementById('aw-lb-next').addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (lb._openFn) lb._openFn(lb._getIdx() + 1);
+  });
   document.addEventListener('keydown', function(e) {
     if (lb.style.display === 'none') return;
     if (e.key === 'Escape') close();
-    if (e.key === 'ArrowLeft') open(idx - 1);
-    if (e.key === 'ArrowRight') open(idx + 1);
+    if (e.key === 'ArrowLeft' && lb._openFn) lb._openFn(lb._getIdx() - 1);
+    if (e.key === 'ArrowRight' && lb._openFn) lb._openFn(lb._getIdx() + 1);
   });
 
-  document.getElementById('content').addEventListener('click', function(e) {
-    const a = e.target.closest('#photo-grid a[data-full]');
-    if (!a) return;
-    e.preventDefault();
-    const all = Array.from(document.querySelectorAll('#photo-grid a[data-full]'));
-    items = all.map(function(el) { return { full: el.dataset.full, caption: el.dataset.caption || '' }; });
-    open(all.indexOf(a));
+}
+
+// Initialise les clics sur la grille photos après injection du contenu
+function initPhotoGrid() {
+  const all = Array.from(document.querySelectorAll('#photo-grid a[data-full]'));
+  if (!all.length) return;
+  const lb = document.getElementById('aw-lb');
+  if (!lb) return;
+  const lbImg = document.getElementById('aw-lb-img');
+  const lbCap = document.getElementById('aw-lb-caption');
+  let items = all.map(function(el) {
+    return {
+      src: new URL(el.dataset.full, window.location.origin + '/site/ref/documents/photo.html').href,
+      caption: el.dataset.caption || ''
+    };
+  });
+  let idx = 0;
+  function openLb(i) {
+    idx = (i + items.length) % items.length;
+    lbImg.src = items[idx].src;
+    lbCap.textContent = items[idx].caption;
+    lb.style.display = 'flex';
+  }
+  // Stocker openLb sur l'élément pour que prev/next du setupLightbox puisse l'utiliser
+  lb._openFn = openLb;
+  lb._getIdx = function() { return idx; };
+  lb._getLen = function() { return items.length; };
+  all.forEach(function(a, i) {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      openLb(i);
+    });
   });
 }
 
@@ -149,6 +180,9 @@ async function navigate(path, pushState = true) {
 
     const content = document.getElementById('content');
     content.innerHTML = source.innerHTML;
+
+    // Galerie photos : attacher les handlers lightbox directement sur les liens
+    if (path === '/photos') initPhotoGrid();
 
     // Mise à jour URL et <title>
     const pageTitle = doc.title || 'Aboriginal Way';
