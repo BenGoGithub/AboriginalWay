@@ -89,12 +89,15 @@ async function navigate(path, pushState = true) {
       try { el.setAttribute('src', new URL(el.getAttribute('src'), base).href); } catch (e) {}
     });
 
-    // Appliquer le background-image du <body> fetché sur #bodytexte
-    const bodyStyle = doc.body.getAttribute('style') || '';
-    const resolvedBodyStyle = bodyStyle.replace(/url\(['"]?([^'")]+)['"]?\)/g, (match, url) => {
-      try { return `url('${new URL(url, base).href}')`; } catch (e) { return match; }
-    });
-    document.getElementById('bodytexte').style.cssText = resolvedBodyStyle;
+    // Page d'accueil : fond noir (exception), toutes les autres : fond CSS (Fond.jpg)
+    const bodytexte = document.getElementById('bodytexte');
+    if (path === '/') {
+      bodytexte.style.backgroundImage = 'none';
+      bodytexte.style.backgroundColor = 'black';
+    } else {
+      bodytexte.style.backgroundImage = '';
+      bodytexte.style.backgroundColor = '';
+    }
 
     const content = document.getElementById('content');
     content.innerHTML = source.innerHTML;
