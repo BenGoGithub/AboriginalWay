@@ -89,13 +89,13 @@ async function navigate(path, pushState = true) {
       try { el.setAttribute('src', new URL(el.getAttribute('src'), base).href); } catch (e) {}
     });
 
-    // Page d'accueil : fond noir (exception), toutes les autres : fond CSS (Fond.jpg)
+    // Fond : noir pour l'accueil, Fond.jpg pour toutes les autres pages
     const bodytexte = document.getElementById('bodytexte');
     if (path === '/') {
       bodytexte.style.backgroundImage = 'none';
       bodytexte.style.backgroundColor = 'black';
     } else {
-      bodytexte.style.backgroundImage = '';
+      bodytexte.style.backgroundImage = "url('/site/ref/image/Fond.jpg')";
       bodytexte.style.backgroundColor = '';
     }
 

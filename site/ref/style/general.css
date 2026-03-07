@@ -17,7 +17,7 @@
 /* page */
 
 #image {top:70px; left:0px; width:300px; height:430px; background-color:black;  border-top:2px solid black; border-bottom:2px solid black;}
-#bodytexte {top:70px; left:300px; width:620px; height:430px; background-image: url('../image/Fond.jpg'); border-top:2px solid black; border-bottom:2px solid black; border-right:2px solid black;}
+#bodytexte {top:70px; left:300px; width:620px; height:430px; border-top:2px solid black; border-bottom:2px solid black; border-right:2px solid black;}
 
 /* barre menu */
 #menu {top:510px; left:0px; width:920px; height:90px;}
