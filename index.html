@@ -78,6 +78,14 @@ async function navigate(path, pushState = true) {
 
     // Extraire #texte si disponible, sinon tout le <body>
     const source = doc.getElementById('texte') || doc.body;
+
+    // Résoudre tous les src relatifs en URLs absolues avant injection
+    // (les pages desktop utilisent ../image/ relatif à leur emplacement)
+    const base = window.location.origin + route.src;
+    source.querySelectorAll('[src]').forEach(el => {
+      try { el.setAttribute('src', new URL(el.getAttribute('src'), base).href); } catch (e) {}
+    });
+
     document.getElementById('content').innerHTML = source.innerHTML;
 
     // Mise à jour URL et <title>
