@@ -1,6 +1,6 @@
 # Suivi SEO — Aboriginal Way
 
-## Dernière mise à jour : 2026-03-08 — Branche `seo-routing` active (merge vers `actualisation` → `main` à faire)
+## Dernière mise à jour : 2026-03-08 — 3 branches feature testées et prêtes à merger dans `actualisation`
 
 ---
 

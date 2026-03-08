@@ -39,7 +39,7 @@ Promotion de l'art et de la culture aborigène australienne.
 
 - Repo : `BenGoGithub/AboriginalWay`
 - Branche principale : `main`
-- Branche active : `seo-routing` (à merger vers `actualisation` → `main`)
+- Branches prêtes à merger : `seo-homepage-content`, `seo-og-url`, `seo-descriptions` → `actualisation` → `main`
 - Déploiement de test : `http://tuyo2268.odns.fr/`
 
 ### Structure clé
