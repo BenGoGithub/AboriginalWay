@@ -35,6 +35,7 @@
 | 25 | Structure de titres : suppression du double h1 (logo → `<p>`) | ✅ Fait | `index.html` |
 | 26 | Page d'accueil : meta description portée à 157 chars + correction `og:url` | ✅ Fait | `site/ref/documents/home.html` |
 | 27 | Page d'accueil : contenu enrichi (~520 mots, 4 sections h2) pour atteindre le seuil SEO des 500 mots | ✅ Fait | `site/ref/documents/home.html`, `site/ref/style/general.css` |
+| 28 | og:url corrigés : chemins de fichier → URLs propres sur 10 pages desktop | ✅ Fait | `activites`, `animation-peinture`, `artistes`, `contact`, `didgeridoo`, `exposition`, `partenaires`, `photo`, `presentation`, `membres` |
 
 ---
 
