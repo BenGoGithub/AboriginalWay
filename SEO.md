@@ -32,6 +32,7 @@
 | 22 | Mobile footer : suppression "fondée en 2007" | ✅ Fait | `mobile/*.html` (11 fichiers) |
 | 23 | Google Tag Manager (GTM-5P7M6QCB) installé | ✅ Fait | `index.html`, `mobile/*.html` (11 fichiers) |
 | 24 | Fix affichage desktop : header `X-Fetch-Content` pour bypasser les redirects 301 dans le fetch SPA | ✅ Fait | `index.html`, `.htaccess` |
+| 28 | og:url corrigés : chemins de fichier → URLs propres sur 10 pages desktop | ✅ Fait | `activites`, `animation-peinture`, `artistes`, `contact`, `didgeridoo`, `exposition`, `partenaires`, `photo`, `presentation`, `membres` |
 
 ---
 
