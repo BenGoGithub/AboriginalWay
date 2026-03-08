@@ -1,6 +1,6 @@
 # Suivi SEO — Aboriginal Way
 
-## Dernière mise à jour : 2026-03-08 — Branche `seo-routing` active (merge vers `actualisation` → `main` à faire)
+## Dernière mise à jour : 2026-03-08 — Branche `seo-homepage-content` en cours
 
 ---
 
@@ -32,6 +32,9 @@
 | 22 | Mobile footer : suppression "fondée en 2007" | ✅ Fait | `mobile/*.html` (11 fichiers) |
 | 23 | Google Tag Manager (GTM-5P7M6QCB) installé | ✅ Fait | `index.html`, `mobile/*.html` (11 fichiers) |
 | 24 | Fix affichage desktop : header `X-Fetch-Content` pour bypasser les redirects 301 dans le fetch SPA | ✅ Fait | `index.html`, `.htaccess` |
+| 25 | Structure de titres : suppression du double h1 (logo → `<p>`) | ✅ Fait | `index.html` |
+| 26 | Page d'accueil : meta description portée à 157 chars + correction `og:url` | ✅ Fait | `site/ref/documents/home.html` |
+| 27 | Page d'accueil : contenu enrichi (~520 mots, 4 sections h2) pour atteindre le seuil SEO des 500 mots | ✅ Fait | `site/ref/documents/home.html`, `site/ref/style/general.css` |
 
 ---
 

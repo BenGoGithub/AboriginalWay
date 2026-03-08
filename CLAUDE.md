@@ -9,6 +9,13 @@ Fichier de référence lu à chaque session. Contient les préférences du proje
 - **Commits Git** : ne jamais inclure `Co-Authored-By: Claude...` dans les messages de commit.
 - **Langue** : répondre en français.
 
+## Workflow Git
+
+- **Ne jamais produire de code sans accord préalable.** Avant tout changement, proposer une stratégie (les étapes), attendre la validation, puis implémenter.
+- **Une branche par feature/tâche.** Créer une branche dédiée (ex. `seo-homepage-content`) pour chaque tâche. La finaliser et la valider avant de merger sur `actualisation`.
+- **`actualisation` ne reçoit que du code finalisé.** C'est la branche de staging, pas de travail en cours.
+- Flux : `feature-branch` → `actualisation` → `main` (prod)
+
 ---
 
 ## Documentation du projet
@@ -39,7 +46,7 @@ Promotion de l'art et de la culture aborigène australienne.
 
 - Repo : `BenGoGithub/AboriginalWay`
 - Branche principale : `main`
-- Branche active : `seo-routing` (à merger vers `actualisation` → `main`)
+- Branche active : `seo-homepage-content` (à merger vers `actualisation` → `main`)
 - Déploiement de test : `http://tuyo2268.odns.fr/`
 
 ### Structure clé

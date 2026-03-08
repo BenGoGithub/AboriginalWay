@@ -57,7 +57,9 @@
 #invit-titre4 {top:230px; left:0px; width:600px; height:50px;}
 #invit-photo  {top:290px; left:0px; width:620px; height:150px;}
 
-
+#home-intro   {margin-top:460px; padding:0 20px 20px; color:#CCCCCC;}
+#home-intro h2 {font-size:13px; color:#8A97B3; margin:16px 0 6px; font-family:Century Gothic,sans-serif;}
+#home-intro p, #home-intro p.liste {color:#CCCCCC; font-size:11px; margin-left:0; margin-right:0;}
 
 img{
 border: 0px; 
