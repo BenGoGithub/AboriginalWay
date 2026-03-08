@@ -1,6 +1,6 @@
 # Suivi SEO — Aboriginal Way
 
-## Dernière mise à jour : 2026-03-07 — Branche `seo-routing` active (merge vers `actualisation` → `main` à faire)
+## Dernière mise à jour : 2026-03-08 — Branche `seo-routing` active (merge vers `actualisation` → `main` à faire)
 
 ---
 
@@ -31,6 +31,7 @@
 | 21 | Contact : brochure pleine largeur (580px) | ✅ Fait | `site/ref/documents/contact.html` |
 | 22 | Mobile footer : suppression "fondée en 2007" | ✅ Fait | `mobile/*.html` (11 fichiers) |
 | 23 | Google Tag Manager (GTM-5P7M6QCB) installé | ✅ Fait | `index.html`, `mobile/*.html` (11 fichiers) |
+| 24 | Fix affichage desktop : header `X-Fetch-Content` pour bypasser les redirects 301 dans le fetch SPA | ✅ Fait | `index.html`, `.htaccess` |
 
 ---
 
@@ -84,3 +85,18 @@
 ## Actions restantes
 
 Aucune action en cours — site à jour et déployé.
+
+---
+
+## Notes techniques
+
+### Fix redirects 301 vs fetch SPA (2026-03-08)
+
+Les redirects 301 ajoutés en action #23 cassaient l'affichage desktop : le router
+faisait `fetch('/site/ref/documents/home.html')`, recevait un 301 vers `/`, et
+injectait le contenu d'`index.html` complet dans `#content` (layout doublé).
+
+**Solution** : le `fetch` envoie un header personnalisé `X-Fetch-Content: 1`, et
+chaque règle de redirect dans `.htaccess` est conditionnée par
+`RewriteCond %{HTTP:X-Fetch-Content} !1`. Les redirects 301 s'appliquent
+uniquement aux navigations directes (SEO), pas aux requêtes internes du SPA.

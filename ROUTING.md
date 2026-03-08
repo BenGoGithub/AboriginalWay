@@ -60,6 +60,13 @@ JS router lit window.location.pathname ("/exposition")
 ```apache
 RewriteEngine On
 RewriteBase /
+
+# Redirections 301 : uniquement pour les navigations directes (pas les fetch SPA)
+RewriteCond %{HTTP:X-Fetch-Content} !1
+RewriteRule ^site/ref/documents/home\.html$ / [R=301,L]
+# ... (idem pour les 10 autres pages desktop)
+
+# SPA Router
 RewriteRule ^index\.html$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -110,6 +117,24 @@ RewriteRule . /index.html [L]
 ---
 
 ## Points techniques notables
+
+### Cohabitation redirects 301 et fetch SPA
+
+Les redirects 301 (`site/ref/documents/*.html` → URLs propres) sont nécessaires
+pour le SEO, mais casseraient le router SPA : `fetch('/site/ref/documents/home.html')`
+suivrait le redirect vers `/` et injecterait `index.html` entier dans `#content`.
+
+Solution : le `fetch` envoie `X-Fetch-Content: 1`, et chaque RewriteRule de
+redirect est précédée de `RewriteCond %{HTTP:X-Fetch-Content} !1`.
+
+```javascript
+const response = await fetch(route.src, { headers: { 'X-Fetch-Content': '1' } });
+```
+
+```apache
+RewriteCond %{HTTP:X-Fetch-Content} !1
+RewriteRule ^site/ref/documents/home\.html$ / [R=301,L]
+```
 
 ### Extraction du contenu
 

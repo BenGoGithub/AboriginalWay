@@ -156,7 +156,7 @@ async function navigate(path, pushState = true) {
 
   try {
     // Chargement du contenu via chemin absolu
-    const response = await fetch(route.src);
+    const response = await fetch(route.src, { headers: { 'X-Fetch-Content': '1' } });
     if (!response.ok) throw new Error('HTTP ' + response.status);
     const html = await response.text();
     const parser = new DOMParser();

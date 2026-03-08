@@ -74,16 +74,27 @@ ErrorDocument 404 /index.html
 RewriteEngine On
 RewriteBase /
 
+RewriteCond %{HTTP:X-Fetch-Content} !1
 RewriteRule ^site/ref/documents/home\.html$             /                    [R=301,L]
+RewriteCond %{HTTP:X-Fetch-Content} !1
 RewriteRule ^site/ref/documents/exposition\.html$       /exposition          [R=301,L]
+RewriteCond %{HTTP:X-Fetch-Content} !1
 RewriteRule ^site/ref/documents/artistes\.html$         /artistes            [R=301,L]
+RewriteCond %{HTTP:X-Fetch-Content} !1
 RewriteRule ^site/ref/documents/photo\.html$            /photos              [R=301,L]
+RewriteCond %{HTTP:X-Fetch-Content} !1
 RewriteRule ^site/ref/documents/animation-peinture\.html$ /animation-peinture [R=301,L]
+RewriteCond %{HTTP:X-Fetch-Content} !1
 RewriteRule ^site/ref/documents/didgeridoo\.html$       /didgeridoo          [R=301,L]
+RewriteCond %{HTTP:X-Fetch-Content} !1
 RewriteRule ^site/ref/documents/activites\.html$        /activites           [R=301,L]
+RewriteCond %{HTTP:X-Fetch-Content} !1
 RewriteRule ^site/ref/documents/presentation\.html$     /presentation        [R=301,L]
+RewriteCond %{HTTP:X-Fetch-Content} !1
 RewriteRule ^site/ref/documents/membres\.html$          /membres             [R=301,L]
+RewriteCond %{HTTP:X-Fetch-Content} !1
 RewriteRule ^site/ref/documents/partenaires\.html$      /partenaires         [R=301,L]
+RewriteCond %{HTTP:X-Fetch-Content} !1
 RewriteRule ^site/ref/documents/contact\.html$          /contact             [R=301,L]
 
 # --- SPA Router : réécriture des URLs propres vers index.html ---
