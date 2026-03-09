@@ -2,6 +2,11 @@
 # Aboriginal Way - Configuration Apache
 # ============================================================
 
+# --- Redirection HTTP → HTTPS ---
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 # --- Compression gzip (réduit la taille des fichiers transférés) ---
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/css text/javascript
