@@ -50,12 +50,12 @@
 #colonneA {top:60px; left:0px; width:280px; height:500px;}
 #colonneB {top:60px; left:150px; width:250px; height:500px;}
 
-#invit-texte  {top:20px; left:0px; width:620px; height:270px;}
-#invit-titre1 {top:20px; left:0px; width:610px; height:80px;}
-#invit-titre2 {top:45px; left:0px; width:600px; height:80px;}
-#invit-titre3 {top:125px; left:0px; width:600px; height:70px;}
-#invit-titre4 {top:195px; left:0px; width:600px; height:50px;}
-#invit-photo  {top:275px; left:0px; width:620px; height:150px;}
+#invit-texte  {position:absolute; top:20px; left:0px; width:620px; height:270px;}
+#invit-titre1 {position:absolute; top:20px; left:0px; width:610px; height:80px;}
+#invit-titre2 {position:absolute; top:120px; left:0px; width:600px; height:80px;}
+#invit-titre3 {position:absolute; top:190px; left:0px; width:600px; height:70px;}
+#invit-titre4 {position:absolute; top:230px; left:0px; width:600px; height:50px;}
+#invit-photo  {position:absolute; top:290px; left:0px; width:620px; height:150px;}
 
 #home-intro   {margin-top:460px; padding:0 20px 20px; color:#CCCCCC;}
 #home-intro h2 {font-size:13px; color:#8A97B3; margin:16px 0 6px; font-family:Century Gothic,sans-serif;}
