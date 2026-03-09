@@ -84,9 +84,9 @@ font-family: Century gothic, sans-serif;
 }
 
 p.home1 { margin-top:0px; margin-bottom:20px; margin-left : 0px; font-size: 10px; color:#9B1A1B; text-align: left; font-family: Century gothic, sans-serif; }
-p.home2, h1.home2 { margin-top:0px; margin-bottom:20px; margin-right : 100px; font-size: 50px; color:#FFFFFF; text-align: right; font-family: Century gothic, sans-serif; font-weight: normal; }
-p.home3, h2.home3 { margin-top:0px; margin-bottom:20px; margin-right : 130px; font-size: 14px; color:#8A97B3; text-align: right; font-family: Century gothic, sans-serif; font-weight: normal; }
-p.home4, h3.home4 { margin-top:0px; margin-bottom:20px; margin-right : 130px; font-size: 14px; color:#FFFFFF; text-align: right; font-family: Century gothic, sans-serif; font-weight: normal; }
+p.home2, h1.home2 { margin-top:0px; margin-bottom:20px; margin-right : 100px; font-size: 50px; color:#FFFFFF; text-align: right; font-family: Century gothic; font-weight: normal; }
+p.home3, h2.home3 { margin-top:0px; margin-bottom:20px; margin-right : 130px; font-size: 14px; color:#8A97B3; text-align: right; font-family: Century gothic; font-weight: normal; }
+p.home4, h3.home4 { margin-top:0px; margin-bottom:20px; margin-right : 130px; font-size: 14px; color:#FFFFFF; text-align: right; font-family: Century gothic; font-weight: normal; }
 
 h1.title { margin-top:10px; margin-right:20px; margin-bottom:20px; margin-left:20px; font-size: 35px; color:#CCCCCC; text-align: right; font-family: Century gothic, sans-serif; }
 
