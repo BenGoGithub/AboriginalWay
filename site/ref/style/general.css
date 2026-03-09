@@ -12,15 +12,15 @@
 .ligne {position: absolute;}
 
 /* bandeau top */
-#logo {top:0px; left:0px; width:930px; height:70px; }
+#logo {top:0px; left:0px; width:940px; height:70px; }
 
 /* page */
 
 #image {top:70px; left:0px; width:300px; height:430px; background-color:black;  border-top:2px solid black; border-bottom:2px solid black;}
-#bodytexte {top:70px; left:300px; width:630px; height:430px; border-top:2px solid black; border-bottom:2px solid black; border-right:2px solid black;}
+#bodytexte {top:70px; left:300px; width:640px; height:430px; border-top:2px solid black; border-bottom:2px solid black; border-right:2px solid black;}
 
 /* barre menu */
-#menu {top:510px; left:0px; width:930px; height:90px;}
+#menu {top:510px; left:0px; width:940px; height:90px;}
 #menuA {top:0px; left:320px; width:130px; height:90px; }
 #menuATitre {top:0px; left:0px; width:130px; height:20px; }
 #ssmenuA {top:20px; left:20px; width:120px; height:55px; border-left:1px solid black; visibility:hidden;}
@@ -50,12 +50,12 @@
 #colonneA {top:60px; left:0px; width:280px; height:500px;}
 #colonneB {top:60px; left:150px; width:250px; height:500px;}
 
-#invit-texte  {position:absolute; top:20px; left:0px; width:630px; height:270px;}
+#invit-texte  {position:absolute; top:20px; left:0px; width:640px; height:270px;}
 #invit-titre1 {position:absolute; top:20px; left:0px; width:610px; height:80px;}
 #invit-titre2 {position:absolute; top:70px; left:0px; width:600px; height:80px;}
 #invit-titre3 {position:absolute; top:140px; left:0px; width:600px; height:70px;}
 #invit-titre4 {position:absolute; top:180px; left:0px; width:600px; height:50px;}
-#invit-photo  {position:absolute; top:270px; left:0px; width:630px; height:150px;}
+#invit-photo  {position:absolute; top:270px; left:0px; width:640px; height:150px;}
 
 #home-intro   {margin-top:440px; padding:0 20px 20px; color:#CCCCCC;}
 #home-intro h2 {font-size:13px; color:#8A97B3; margin:16px 0 6px; font-family:Century Gothic,sans-serif;}
