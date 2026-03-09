@@ -55,9 +55,9 @@
 #invit-titre2 {position:absolute; top:80px; left:0px; width:600px; height:80px;}
 #invit-titre3 {position:absolute; top:150px; left:0px; width:600px; height:70px;}
 #invit-titre4 {position:absolute; top:190px; left:0px; width:600px; height:50px;}
-#invit-photo  {position:absolute; top:280px; left:0px; width:620px; height:150px;}
+#invit-photo  {position:absolute; top:270px; left:0px; width:620px; height:150px;}
 
-#home-intro   {margin-top:420px; padding:0 20px 20px; color:#CCCCCC;}
+#home-intro   {margin-top:440px; padding:0 20px 20px; color:#CCCCCC;}
 #home-intro h2 {font-size:13px; color:#8A97B3; margin:16px 0 6px; font-family:Century Gothic,sans-serif;}
 #home-intro p, #home-intro p.liste {color:#CCCCCC; font-size:11px; margin-left:0; margin-right:0;}
 
