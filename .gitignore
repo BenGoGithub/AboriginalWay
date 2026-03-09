@@ -9,3 +9,6 @@ logs/
 
 # Artefacts Office
 *_fichiers/
+
+# Documentation projet (exclue du déploiement)
+*.md
