@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr"><head>
 <meta charset="utf-8">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5P7M6QCB');</script>
+<!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Partez sur le Chemin Aborigène avec Aboriginal Way : art, expositions, didgeridoo et animations autour des cultures et traditions aborigènes d'Australie depuis 2007.">
 <meta property="og:title" content="Aboriginal Way - Le Chemin Aborigène">
@@ -16,7 +23,7 @@
 <link rel="canonical" href="https://aboriginalway.fr/">
 <title>Aboriginal Way - Le Chemin Aborigène, cultures d'Australie</title>
 <link rel="icon" type="image/x-icon" href="/site/ref/image/favicon.ico">
-<link href="site/ref/style/general.css" rel="stylesheet" type="text/css">
+<link href="site/ref/style/general.css" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -32,71 +39,256 @@
   }
 }
 </script>
-<script type="text/javascript">
-if (window.matchMedia("(max-width: 768px)").matches) {
-  window.location.replace("mobile/index.html");
+<script>
+// Dossier de base du site ('' si à la racine du domaine, '/aboriginalway' si sous-dossier)
+const BASE = '';
+
+// Table de routage : pathname → fichier source (absolu) + image sidebar
+const routes = {
+  '/':                   { src: '/site/ref/documents/home.html',              img: 'site/ref/image/Bhgrand.jpg'   },
+  '/exposition':         { src: '/site/ref/documents/exposition.html',         img: 'site/ref/image/Serpent.jpg'   },
+  '/artistes':           { src: '/site/ref/documents/artistes.html',           img: 'site/ref/image/Serpent.jpg'   },
+  '/photos':             { src: '/site/ref/documents/photo.html',              img: 'site/ref/image/Serpent.jpg'   },
+  '/animation-peinture': { src: '/site/ref/documents/animation-peinture.html', img: 'site/ref/image/Gecko.jpg'     },
+  '/didgeridoo':         { src: '/site/ref/documents/didgeridoo.html',         img: 'site/ref/image/Gecko.jpg'     },
+  '/activites':          { src: '/site/ref/documents/activites.html',          img: 'site/ref/image/Gecko.jpg'     },
+  '/presentation':       { src: '/site/ref/documents/presentation.html',       img: 'site/ref/image/Libellule.jpg' },
+  '/membres':            { src: '/site/ref/documents/membres.html',            img: 'site/ref/image/Libellule.jpg' },
+  '/partenaires':        { src: '/site/ref/documents/partenaires.html',        img: 'site/ref/image/Libellule.jpg' },
+  '/contact':            { src: '/site/ref/documents/contact.html',            img: 'site/ref/image/Bhpetit.jpg'   },
+};
+
+// Lightbox pour la galerie photos
+function setupLightbox() {
+  const lb = document.createElement('div');
+  lb.id = 'aw-lb';
+  lb.style.cssText = 'display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.88);z-index:1000;justify-content:center;align-items:center;flex-direction:column;';
+  lb.innerHTML =
+    '<button id="aw-lb-close" style="position:absolute;top:12px;right:18px;background:none;border:none;color:#fff;font-size:30px;cursor:pointer;line-height:1;">&#x2715;</button>' +
+    '<button id="aw-lb-prev" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:#fff;font-size:52px;cursor:pointer;padding:10px;line-height:1;">&#8249;</button>' +
+    '<button id="aw-lb-next" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:#fff;font-size:52px;cursor:pointer;padding:10px;line-height:1;">&#8250;</button>' +
+    '<img id="aw-lb-img" src="" alt="" style="max-width:88%;max-height:82vh;object-fit:contain;display:block;">' +
+    '<p id="aw-lb-caption" style="color:#ccc;margin:10px 0 0;font-family:Century Gothic,sans-serif;font-size:13px;text-align:center;"></p>';
+  document.body.appendChild(lb);
+
+  let items = [], idx = 0;
+  const PHOTO_BASE = '/site/ref/documents/';
+
+  function open(i) {
+    idx = (i + items.length) % items.length;
+    document.getElementById('aw-lb-img').src = PHOTO_BASE + items[idx].full;
+    document.getElementById('aw-lb-caption').textContent = items[idx].caption;
+    lb.style.display = 'flex';
+  }
+  function close() {
+    lb.style.display = 'none';
+    document.getElementById('aw-lb-img').src = '';
+  }
+
+  document.getElementById('aw-lb-close').addEventListener('click', close);
+  lb.addEventListener('click', function(e) { if (e.target === lb) close(); });
+  document.getElementById('aw-lb-prev').addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (lb._openFn) lb._openFn(lb._getIdx() - 1);
+  });
+  document.getElementById('aw-lb-next').addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (lb._openFn) lb._openFn(lb._getIdx() + 1);
+  });
+  document.addEventListener('keydown', function(e) {
+    if (lb.style.display === 'none') return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft' && lb._openFn) lb._openFn(lb._getIdx() - 1);
+    if (e.key === 'ArrowRight' && lb._openFn) lb._openFn(lb._getIdx() + 1);
+  });
+
 }
-function change(imagechoisie)
-{
-document.getElementById('visuel').src = imagechoisie
+
+// Initialise les clics sur la grille photos après injection du contenu
+function initPhotoGrid() {
+  const all = Array.from(document.querySelectorAll('#photo-grid a[data-full]'));
+  if (!all.length) return;
+  const lb = document.getElementById('aw-lb');
+  if (!lb) return;
+  const lbImg = document.getElementById('aw-lb-img');
+  const lbCap = document.getElementById('aw-lb-caption');
+  let items = all.map(function(el) {
+    return {
+      src: new URL(el.dataset.full, window.location.origin + '/site/ref/documents/photo.html').href,
+      caption: el.dataset.caption || ''
+    };
+  });
+  let idx = 0;
+  function openLb(i) {
+    idx = (i + items.length) % items.length;
+    lbImg.src = items[idx].src;
+    lbCap.textContent = items[idx].caption;
+    lb.style.display = 'flex';
+  }
+  // Stocker openLb sur l'élément pour que prev/next du setupLightbox puisse l'utiliser
+  lb._openFn = openLb;
+  lb._getIdx = function() { return idx; };
+  lb._getLen = function() { return items.length; };
+  all.forEach(function(a, i) {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      openLb(i);
+    });
+  });
 }
-function showmenu(elmnt)
-{
-document.getElementById(elmnt).style.visibility="visible"
+
+// Charge un script de manière séquentielle (respecte l'ordre jQuery → plugin)
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = src;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.body.appendChild(script);
+  });
 }
-function hidemenu(elmnt)
-{
-document.getElementById(elmnt).style.visibility="hidden"
+
+async function navigate(path, pushState = true) {
+  const route = routes[path] || routes['/'];
+
+  // Image sidebar
+  document.getElementById('visuel').src = route.img;
+
+  try {
+    // Chargement du contenu via chemin absolu
+    const response = await fetch(route.src, { headers: { 'X-Fetch-Content': '1' } });
+    if (!response.ok) throw new Error('HTTP ' + response.status);
+    const html = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+
+    // Extraire #container (parent de #texte) si disponible, sinon tout le <body>
+    // On supprime l'id pour éviter un conflit CSS avec le #container de index.html
+    const container = doc.getElementById('container');
+    if (container) container.removeAttribute('id');
+    const source = container || doc.body;
+
+    // Résoudre tous les src relatifs en URLs absolues avant injection
+    // (les pages desktop utilisent ../image/ relatif à leur emplacement)
+    const base = window.location.origin + route.src;
+    source.querySelectorAll('[src]').forEach(el => {
+      try { el.setAttribute('src', new URL(el.getAttribute('src'), base).href); } catch (e) {}
+    });
+
+    // Fond : noir pour l'accueil, Fond.jpg pour toutes les autres pages
+    const bodytexte = document.getElementById('bodytexte');
+    if (path === '/') {
+      bodytexte.style.backgroundImage = 'none';
+      bodytexte.style.backgroundColor = 'black';
+    } else {
+      bodytexte.style.backgroundImage = "url('/site/ref/image/Fond.jpg')";
+      bodytexte.style.backgroundColor = '';
+    }
+
+    const content = document.getElementById('content');
+    content.innerHTML = source.innerHTML;
+
+    // Galerie photos : attacher les handlers lightbox directement sur les liens
+    if (path === '/photos') initPhotoGrid();
+
+    // Mise à jour URL et <title>
+    const pageTitle = doc.title || 'Aboriginal Way';
+    if (pushState) history.pushState({ path }, pageTitle, BASE + (path === '/' ? '/' : path));
+    document.title = pageTitle;
+
+    document.getElementById('content').scrollTop = 0;
+
+  } catch (e) {
+    document.getElementById('content').innerHTML =
+      '<p style="padding:20px;color:#9B1A1B">Erreur de chargement (' + e.message + '). Veuillez réessayer.</p>';
+  }
 }
+
+// Bouton retour / avant navigateur
+window.addEventListener('popstate', (e) => {
+  navigate(e.state?.path || '/', false);
+});
+
+// Menus déroulants (inchangé)
+function showmenu(elmnt) { document.getElementById(elmnt).style.visibility = 'visible'; }
+function hidemenu(elmnt) { document.getElementById(elmnt).style.visibility = 'hidden'; }
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Redirection mobile
+  if (window.matchMedia('(max-width: 768px)').matches) {
+    window.location.replace('mobile/index.html');
+    return;
+  }
+
+  // Lightbox galerie photos
+  setupLightbox();
+
+  // Interception des clics sur les liens du menu
+  document.querySelectorAll('a[data-route]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigate(link.getAttribute('data-route'));
+    });
+  });
+
+  // Charge la page correspondant à l'URL courante (accès direct, F5)
+  // Retire le BASE du pathname pour obtenir la route locale (/exposition, /, etc.)
+  const initPath = window.location.pathname.replace(BASE, '') || '/';
+  navigate(initPath, false);
+});
 </script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P7M6QCB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <div id="container">
 <div style="left: 548px; width: 372px;" id="logo" class="ligne">
-<h1 class="title"><a href="index.html" target="_self" class="title">Aboriginal
-Way </a><a href="index.html"><img style="border: 0px solid ; width: 55px; height: 49px;" alt="Logo AW" src="/site/ref/image/FinalTransp.gif"></a></h1>
+<p class="title"><a href="/" data-route="/" class="title">Aboriginal
+Way </a><a href="/" data-route="/"><img style="border: 0px solid ; width: 55px; height: 49px;" alt="Logo AW" src="/site/ref/image/FinalTransp.gif"></a></p>
 </div>
 <div id="image" class="ligne"><img src="site/ref/image/Bhgrand.jpg" id="visuel" border="0" height="420" width="280"> </div>
-<div id="bodytexte" class="ligne"> <iframe style="width: 100%; height: 100%; background-color: rgb(255, 255, 255);" name="texte" src="site/ref/documents/home.html" frameborder="0" height="100%" width="100%"></iframe>
+<div id="bodytexte" class="ligne"><div id="content" style="width: 100%; height: 100%; overflow-y: auto;"></div>
 </div>
 <a name="Animations_Cuisine_Événements_Cultures"></a>
 <div style="left: 0px; width: 314px;" id="menu" class="ligne"><div onmouseover="showmenu('ssmenuA')" onmouseout="hidemenu('ssmenuA')" id="menuA" class="ligne">
-<div style="top: 0px; height: 68px; left: 0px; width: 303px;" id="menuATitre" class="ligne"> <a id="menu1" href="site/ref/documents/activites.html" target="texte" class="menu" onclick="change('site/ref/image/Gecko.jpg')">Activités</a>
+<div style="top: 0px; height: 68px; left: 0px; width: 303px;" id="menuATitre" class="ligne"> <a id="menu1" href="/activites" data-route="/activites" class="menu">Activités</a>
 </div>
 <div id="ssmenuA" class="ligne">
-<div id="ssmenuATitreA" class="ligne"><a href="site/ref/documents/animation-peinture.html" target="texte" class="ssmenu" onclick="change('site/ref/image/Gecko.jpg')">Animation</a>
+<div id="ssmenuATitreA" class="ligne"><a href="/animation-peinture" data-route="/animation-peinture" class="ssmenu">Animation</a>
 </div>
-<div id="ssmenuATitreB" class="ligne"><a href="site/ref/documents/activites.html" target="texte" class="ssmenu" onclick="change('site/ref/image/Gecko.jpg')">Cultures</a>
+<div id="ssmenuATitreB" class="ligne"><a href="/activites" data-route="/activites" class="ssmenu">Cultures</a>
 </div>
-<div id="ssmenuATitreC" class="ligne"><a href="site/ref/documents/didgeridoo.html" target="texte" class="ssmenu" onclick="change('site/ref/image/Gecko.jpg')">Didgeridoo</a>
+<div id="ssmenuATitreC" class="ligne"><a href="/didgeridoo" data-route="/didgeridoo" class="ssmenu">Didgeridoo</a>
 </div>
 </div>
 </div>
 <div id="menuB" onmouseover="showmenu('ssmenuB')" onmouseout="hidemenu('ssmenuB')" class="ligne">
-<div id="menuBTitre" class="ligne"> <a href="site/ref/documents/exposition.html" target="texte" class="menu" onclick="change('site/ref/image/Serpent.jpg')">Exposition</a>
+<div id="menuBTitre" class="ligne"> <a href="/exposition" data-route="/exposition" class="menu">Exposition</a>
 </div>
 <div id="ssmenuB" class="ligne">
-<div id="ssmenuBTitreA" class="ligne"><a href="site/ref/documents/artistes.html" target="texte" class="ssmenu" onclick="change('site/ref/image/Serpent.jpg')">Artistes
+<div id="ssmenuBTitreA" class="ligne"><a href="/artistes" data-route="/artistes" class="ssmenu">Artistes
 et Vidéos</a> </div>
-<div id="ssmenuBTitreB" class="ligne"><a href="site/ref/documents/photo.html" target="texte" class="ssmenu" onclick="change('site/ref/image/Serpent.jpg')">Photos</a>
+<div id="ssmenuBTitreB" class="ligne"><a href="/photos" data-route="/photos" class="ssmenu">Photos</a>
 </div>
 </div>
 </div>
 <div id="menuC" onmouseover="showmenu('ssmenuC')" onmouseout="hidemenu('ssmenuC')" class="ligne">
-<div id="menuCTitre" class="ligne"> <a href="site/ref/documents/presentation.html" class="menu" target="texte" onclick="change('site/ref/image/Libellule.jpg')">L'Association</a>
+<div id="menuCTitre" class="ligne"> <a href="/presentation" data-route="/presentation" class="menu">L'Association</a>
 </div>
 <div id="ssmenuC" class="ligne">
-<div id="ssmenuCTitreA" class="ligne"><a href="site/ref/documents/presentation.html" target="texte" class="ssmenu" onclick="change('site/ref/image/Libellule.jpg')">Présentation</a>
+<div id="ssmenuCTitreA" class="ligne"><a href="/presentation" data-route="/presentation" class="ssmenu">Présentation</a>
 </div>
-<div id="ssmenuCTitreB" class="ligne"><a href="site/ref/documents/membres.html" target="texte" class="ssmenu" onclick="change('site/ref/image/Libellule.jpg')">Pour
+<div id="ssmenuCTitreB" class="ligne"><a href="/membres" data-route="/membres" class="ssmenu">Pour
 nos membres</a> </div>
-<div id="ssmenuCTitreC" class="ligne"><a href="site/ref/documents/partenaires.html" target="texte" class="ssmenu" onclick="change('site/ref/image/Libellule.jpg')">Partenaires
+<div id="ssmenuCTitreC" class="ligne"><a href="/partenaires" data-route="/partenaires" class="ssmenu">Partenaires
 + liens</a>
 </div>
 </div>
 </div>
 <div id="menuE" class="ligne">
-<div id="menuETitre" class="ligne"> <a href="site/ref/documents/contact.html" class="menu" target="texte" onclick="change('site/ref/image/Bhpetit.jpg')">Contact</a>
+<div id="menuETitre" class="ligne"> <a href="/contact" data-route="/contact" class="menu">Contact</a>
 </div>
 </div>
 <div id="signature" class="ligne">

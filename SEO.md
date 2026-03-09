@@ -1,6 +1,6 @@
 # Suivi SEO — Aboriginal Way
 
-## Dernière mise à jour : 2026-03-07 — Branche `actualisation` déployée (merge vers `main` à faire)
+## Dernière mise à jour : 2026-03-08 — Branches `seo-homepage-content`, `seo-og-url`, `seo-descriptions` mergées dans `actualisation`
 
 ---
 
@@ -19,6 +19,24 @@
 | 9 | Twitter Cards sur toutes les pages mobiles | ✅ Fait | `mobile/*.html` (11 pages) |
 | 10 | Fix menu et pages artistes desktop | ✅ Fait | `site/ref/documents/artistes.html` |
 | 11 | Ajout flyer et mise en page contact desktop | ✅ Fait | `site/ref/documents/contact.html` |
+| 12 | SEO activites.html : title, description, Open Graph, Twitter Card, alt image, H1 | ✅ Fait | `site/ref/documents/activites.html` |
+| 13 | SEO toutes les pages desktop : Open Graph, Twitter Card, canonical, robots, titles, descriptions | ✅ Fait | `home`, `exposition`, `contact`, `artistes`, `didgeridoo`, `animation-peinture`, `photo`, `membres`, `partenaires`, `presentation`, `liens`, `temps` |
+| 14 | Alt descriptifs sur les 26 images de la galerie photo | ✅ Fait | `site/ref/documents/photo.html` |
+| 15 | H1 descriptif sur liens.html | ✅ Fait | `site/ref/documents/liens.html` |
+| 16 | membres.html : noindex (page en construction) | ✅ Fait | `site/ref/documents/membres.html` |
+| 17 | Routage SPA History API / pushState — URLs propres indexables | ✅ Fait | `index.html`, `.htaccess`, `sitemap.xml` |
+| 18 | Galerie photos : remplacement VisualLightBox/jQuery par CSS grid + lightbox vanilla JS | ✅ Fait | `site/ref/documents/photo.html`, `index.html` |
+| 19 | Fond de page (Fond.jpg) appliqué via JS avec chemin absolu | ✅ Fait | `index.html`, `site/ref/style/general.css` |
+| 20 | Exposition : vidéo et textes centrés | ✅ Fait | `site/ref/documents/exposition.html` |
+| 21 | Contact : brochure pleine largeur (580px) | ✅ Fait | `site/ref/documents/contact.html` |
+| 22 | Mobile footer : suppression "fondée en 2007" | ✅ Fait | `mobile/*.html` (11 fichiers) |
+| 23 | Google Tag Manager (GTM-5P7M6QCB) installé | ✅ Fait | `index.html`, `mobile/*.html` (11 fichiers) |
+| 24 | Fix affichage desktop : header `X-Fetch-Content` pour bypasser les redirects 301 dans le fetch SPA | ✅ Fait | `index.html`, `.htaccess` |
+| 25 | Structure de titres : suppression du double h1 (logo → `<p>`) | ✅ Fait | `index.html` |
+| 26 | Page d'accueil : meta description portée à 157 chars + correction `og:url` | ✅ Fait | `site/ref/documents/home.html` |
+| 27 | Page d'accueil : contenu enrichi (~520 mots, 4 sections h2) pour atteindre le seuil SEO des 500 mots | ✅ Fait | `site/ref/documents/home.html`, `site/ref/style/general.css` |
+| 28 | og:url corrigés : chemins de fichier → URLs propres sur 10 pages desktop | ✅ Fait | `activites`, `animation-peinture`, `artistes`, `contact`, `didgeridoo`, `exposition`, `partenaires`, `photo`, `presentation`, `membres` |
+| 29 | Descriptions trop longues (>160 chars) raccourcies à 148–159 chars sur 7 pages desktop | ✅ Fait | `artistes`, `partenaires`, `photo`, `contact`, `didgeridoo`, `presentation`, `activites` |
 
 ---
 
@@ -72,3 +90,18 @@
 ## Actions restantes
 
 Aucune action en cours — site à jour et déployé.
+
+---
+
+## Notes techniques
+
+### Fix redirects 301 vs fetch SPA (2026-03-08)
+
+Les redirects 301 ajoutés en action #23 cassaient l'affichage desktop : le router
+faisait `fetch('/site/ref/documents/home.html')`, recevait un 301 vers `/`, et
+injectait le contenu d'`index.html` complet dans `#content` (layout doublé).
+
+**Solution** : le `fetch` envoie un header personnalisé `X-Fetch-Content: 1`, et
+chaque règle de redirect dans `.htaccess` est conditionnée par
+`RewriteCond %{HTTP:X-Fetch-Content} !1`. Les redirects 301 s'appliquent
+uniquement aux navigations directes (SEO), pas aux requêtes internes du SPA.
