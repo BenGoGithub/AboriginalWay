@@ -52,10 +52,10 @@
 
 #invit-texte  {top:20px; left:0px; width:620px; height:270px;}
 #invit-titre1 {top:20px; left:0px; width:610px; height:80px;}
-#invit-titre2 {top:15px; left:0px; width:600px; height:80px;}
-#invit-titre3 {top:95px; left:0px; width:600px; height:70px;}
-#invit-titre4 {top:165px; left:0px; width:600px; height:50px;}
-#invit-photo  {top:245px; left:0px; width:620px; height:150px;}
+#invit-titre2 {top:45px; left:0px; width:600px; height:80px;}
+#invit-titre3 {top:125px; left:0px; width:600px; height:70px;}
+#invit-titre4 {top:195px; left:0px; width:600px; height:50px;}
+#invit-photo  {top:275px; left:0px; width:620px; height:150px;}
 
 #home-intro   {margin-top:460px; padding:0 20px 20px; color:#CCCCCC;}
 #home-intro h2 {font-size:13px; color:#8A97B3; margin:16px 0 6px; font-family:Century Gothic,sans-serif;}
