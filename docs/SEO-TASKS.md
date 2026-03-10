@@ -1,6 +1,6 @@
 # SEO — Suivi des tâches Aboriginal Way
 
-Dernière mise à jour : 2026-03-10 (audits initiaux complétés)
+Dernière mise à jour : 2026-03-10
 
 ## Légende
 - `[ ]` À faire &nbsp;|&nbsp; `[~]` En cours &nbsp;|&nbsp; `[x]` Terminé &nbsp;|&nbsp; `[!]` Bloqué / décision requise
@@ -142,6 +142,18 @@ Objectif : être cité dans les réponses IA (Perplexity, SGE, ChatGPT) pour les
 | Axe 4 — Core Web Vitals | `docs/audit-axe4-cwv.md` |
 | Axe 5 — UX Mobile | `docs/audit-axe5-mobile-ux.md` |
 | Axe 6 — Backlinks | `docs/audit-axe6-backlinks.md` |
+
+---
+
+## Session 2026-03-10 — Réalisé
+
+- Création de `docs/` + `SEO-TASKS.md` (suivi des tâches SEO)
+- Audits complets des 6 axes → 6 documents dans `docs/`
+- `fix-mobile-meta` : GTM dupliqué supprimé, OG tags + canonicals corrigés sur 11 pages mobiles
+- `fix-desktop-perf` : `loading="lazy"` sur 6 iframes + 27 miniatures, correction `animation-peinture.html`
+- `CLAUDE.md` : règle workflow Git clarifiée (`actualisation` = docs uniquement)
+
+**Prochaine priorité** : réécriture contenu `presentation.html` (desktop + mobile) — axe 1 + EEAT
 
 ---
 
