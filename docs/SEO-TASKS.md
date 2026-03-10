@@ -1,6 +1,6 @@
 # SEO — Suivi des tâches Aboriginal Way
 
-Dernière mise à jour : 2026-03-10
+Dernière mise à jour : 2026-03-10 (audits initiaux complétés)
 
 ## Légende
 - `[ ]` À faire &nbsp;|&nbsp; `[~]` En cours &nbsp;|&nbsp; `[x]` Terminé &nbsp;|&nbsp; `[!]` Bloqué / décision requise
@@ -10,22 +10,23 @@ Dernière mise à jour : 2026-03-10
 ## Axe 1 — Qualité et fraîcheur du contenu
 
 ### Audit des pages desktop (état au 2026-03-10)
+→ Voir détail complet : `docs/audit-axe1-contenu.md`
 
 | Page | État contenu | Problèmes |
 |---|---|---|
-| `home.html` | ✅ Bon (~500 mots, 5 sections H2) | — |
-| `presentation.html` | ⚠️ Squelettique (~80 mots, 3 §) | Réécriture complète nécessaire |
-| `artistes.html` | ⚠️ Liste de noms + 2 vidéos YT | Aucune biographie, zéro texte indexable |
-| `didgeridoo.html` | ⚠️ Très court (4 lignes + image flyer) | Contenu insuffisant pour le SEO |
-| `animation-peinture.html` | 🔴 Quasi vide (H1 + iframe Vimeo) | Zéro texte, CSS manquant, background absent |
-| `exposition.html` | ⚠️ Court (1 vidéo + 2 lignes) | Pas de description de l'exposition |
-| `activites.html` | 🔴 Image GIF = zéro texte indexable | Contenu entièrement invisible pour Google |
-| `temps.html` | ⚠️ 1 événement daté de 2011 | URL non propre, contenu périmé, 15 ans |
-| `liens.html` | ⚠️ 3 liens HTTP, peu de texte | URL non propre, liens HTTP, contenu minimal |
-| `membres.html` | 🔴 "Page en construction" | noindex, aucun contenu |
-| `partenaires.html` | ❓ Non audité | — |
-| `photo.html` | ❓ Non audité | — |
-| `contact.html` | ❓ Non audité | — |
+| `home.html` | ✅ Bon (~500 mots, 5 H2) | — |
+| `presentation.html` | ⚠️ Squelettique (~80 mots) | Réécriture complète nécessaire |
+| `artistes.html` | ⚠️ Liste + 2 vidéos YT | Zéro biographie |
+| `didgeridoo.html` | ⚠️ Très court (~100 mots) | Image flyer non indexable |
+| `animation-peinture.html` | 🔴 Quasi vide | CSS `general.css` absent, background absent |
+| `exposition.html` | ⚠️ Court (~50 mots) | Pas de description des œuvres |
+| `activites.html` | 🔴 Image GIF seulement | Zéro texte indexable |
+| `temps.html` | ⚠️ Événement de 2011 | URL non propre, contenu périmé |
+| `liens.html` | ⚠️ 3 liens HTTP | URL non propre, peu de contexte |
+| `membres.html` | 🔴 "En construction" | `noindex`, aucun contenu |
+| `partenaires.html` | ✅ Correct | Territory Essence en HTTP |
+| `photo.html` | ⚠️ Galerie sans texte | 27 photos, bons alt, mais zéro contexte |
+| `contact.html` | ⚠️ Pauvre | 1 ligne + 3 GIFs |
 
 ### Tâches par page
 
@@ -98,20 +99,21 @@ Objectif : être cité dans les réponses IA (Perplexity, SGE, ChatGPT) pour les
 - [ ] **Règle de workflow** : chaque enrichissement desktop → la même feature branch inclut le mobile
 
 ### Pages mobiles à auditer
+→ Voir détail complet : `docs/audit-axe5-mobile-ux.md`
 
-| Page mobile | Correspondance desktop | Auditée |
-|---|---|---|
-| `mobile/index.html` | `home.html` | ❓ |
-| `mobile/presentation.html` | `presentation.html` | ❓ |
-| `mobile/artistes.html` | `artistes.html` | ❓ |
-| `mobile/didgeridoo.html` | `didgeridoo.html` | ❓ |
-| `mobile/animation-peinture.html` | `animation-peinture.html` | ❓ |
-| `mobile/exposition.html` | `exposition.html` | ❓ |
-| `mobile/activites.html` | `activites.html` | ❓ |
-| `mobile/membres.html` | `membres.html` | ❓ |
-| `mobile/partenaires.html` | `partenaires.html` | ❓ |
-| `mobile/photos.html` | `photo.html` | ❓ |
-| `mobile/contact.html` | `contact.html` | ❓ |
+| Page mobile | Correspondance desktop | Contenu | GTM dupliqué | OG tags | Canonical |
+|---|---|---|---|---|---|
+| `mobile/index.html` | `home.html` | ⚠️ Nav seule | ✅ | ✅ | ⚠️ `/mobile/` |
+| `mobile/presentation.html` | `presentation.html` | ⚠️ ~150 mots | 🔴 ×2 | ❌ | ⚠️ |
+| `mobile/artistes.html` | `artistes.html` | ⚠️ Liste seule | 🔴 ×2 | ❌ | ⚠️ |
+| `mobile/didgeridoo.html` | `didgeridoo.html` | ✅ ~200 mots | 🔴 ×2 | ❌ | ⚠️ |
+| `mobile/animation-peinture.html` | `animation-peinture.html` | ⚠️ ~80 mots | 🔴 ×2 | ❌ | ⚠️ |
+| `mobile/exposition.html` | `exposition.html` | ⚠️ ~100 mots | 🔴 ×2 | ❌ | ⚠️ |
+| `mobile/activites.html` | `activites.html` | ✅ ~200 mots | 🔴 ×2 | ❌ | ⚠️ |
+| `mobile/membres.html` | `membres.html` | 🔴 Construction | 🔴 ×2 | ❌ | ⚠️ |
+| `mobile/partenaires.html` | `partenaires.html` | ✅ ~150 mots | 🔴 ×2 | ❌ | ⚠️ |
+| `mobile/photos.html` | `photo.html` | ⚠️ Galerie seule | 🔴 ×2 | ❌ | ⚠️ |
+| `mobile/contact.html` | `contact.html` | ✅ tél + email | 🔴 ×2 | ❌ | ⚠️ |
 
 ---
 
@@ -123,6 +125,19 @@ Objectif : être cité dans les réponses IA (Perplexity, SGE, ChatGPT) pour les
 - [ ] Vérifier éligibilité Wikipedia (Territory Essence, artistes partenaires)
 - [ ] Sites thématiques : forums australophiles, enseignants didgeridoo, musiques du monde
 - [ ] Territory Essence — vérifier s'ils ont un lien vers Aboriginal Way sur leur site
+
+---
+
+## Liens vers les audits détaillés
+
+| Axe | Document |
+|---|---|
+| Axe 1 — Qualité et fraîcheur du contenu | `docs/audit-axe1-contenu.md` |
+| Axe 2 — Answer Engine Optimization | `docs/audit-axe2-aeo.md` |
+| Axe 3 — EEAT | `docs/audit-axe3-eeat.md` |
+| Axe 4 — Core Web Vitals | `docs/audit-axe4-cwv.md` |
+| Axe 5 — UX Mobile | `docs/audit-axe5-mobile-ux.md` |
+| Axe 6 — Backlinks | `docs/audit-axe6-backlinks.md` |
 
 ---
 
