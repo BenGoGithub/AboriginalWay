@@ -200,17 +200,14 @@ Bug : desktop a `noindex`, mobile non. Google peut indexer une page "en construc
 
 ### P0 — Correctifs immédiats
 - [x] Ajouter `<meta name="robots" content="noindex, follow">` sur `mobile/membres.html`
-- [ ] Supprimer le bloc GTM noscript dupliqué sur les 10 pages concernées
+- [x] Supprimer le bloc GTM noscript dupliqué sur les 10 pages concernées
 
 ### P1 — Canonicals
-- [ ] Corriger les canonical de toutes les pages mobiles → pointer vers l'URL desktop propre
-  - `mobile/presentation.html` → `https://aboriginalway.fr/presentation`
-  - `mobile/didgeridoo.html` → `https://aboriginalway.fr/didgeridoo`
-  - etc.
-- [ ] `mobile/index.html` → `https://aboriginalway.fr/` (déjà `/mobile/` mais devrait être `/`)
+- [x] Corriger les canonical de toutes les pages mobiles → pointer vers l'URL desktop propre
+- [x] `mobile/index.html` → `https://aboriginalway.fr/`
 
 ### P2 — OG tags
-- [ ] Ajouter les balises `og:title`, `og:description`, `og:type`, `og:url`, `og:image` sur les 10 pages sans OG
+- [x] Ajouter les balises `og:title`, `og:description`, `og:type`, `og:url`, `og:image` sur les 10 pages sans OG
 
 ### P3 — Contenu
 - [ ] `mobile/membres.html` : décider du contenu ou retirer du menu
