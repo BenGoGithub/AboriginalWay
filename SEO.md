@@ -1,6 +1,6 @@
 # Suivi SEO — Aboriginal Way
 
-## Dernière mise à jour : 2026-03-08 — Branches `seo-homepage-content`, `seo-og-url`, `seo-descriptions` mergées dans `actualisation`
+## Dernière mise à jour : 2026-03-10 — Apple Touch Icon ajouté sur index.html + 11 pages mobiles
 
 ---
 
@@ -37,6 +37,7 @@
 | 27 | Page d'accueil : contenu enrichi (~520 mots, 4 sections h2) pour atteindre le seuil SEO des 500 mots | ✅ Fait | `site/ref/documents/home.html`, `site/ref/style/general.css` |
 | 28 | og:url corrigés : chemins de fichier → URLs propres sur 10 pages desktop | ✅ Fait | `activites`, `animation-peinture`, `artistes`, `contact`, `didgeridoo`, `exposition`, `partenaires`, `photo`, `presentation`, `membres` |
 | 29 | Descriptions trop longues (>160 chars) raccourcies à 148–159 chars sur 7 pages desktop | ✅ Fait | `artistes`, `partenaires`, `photo`, `contact`, `didgeridoo`, `presentation`, `activites` |
+| 30 | Apple Touch Icon (180×180) — icône pour ajout à l'écran d'accueil iOS/Android | ✅ Fait | `apple-touch-icon.png`, `index.html`, `mobile/*.html` (11 fichiers) |
 
 ---
 

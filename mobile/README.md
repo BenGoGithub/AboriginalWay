@@ -14,7 +14,6 @@ mobile/
 ├── animation-peinture.html # Atelier peinture aborigène + vidéo Vimeo
 ├── artistes.html           # Artistes + 2 vidéos YouTube
 ├── contact.html            # Contact (tel: cliquable + mailto:)
-├── cuisine.html            # Cuisine bush tucker + vidéo Dailymotion
 ├── didgeridoo.html         # Cours de didgeridoo
 ├── exposition.html         # Exposition An Other Way + vidéo YouTube
 ├── membres.html            # Espace membres (En construction)
@@ -69,6 +68,7 @@ Chaque page respecte les règles suivantes :
 - `<h1>` visible et unique
 - HTML sémantique : `<header>`, `<main>`, `<footer>`
 - `loading="lazy"` sur toutes les images de la galerie
+- `<link rel="apple-touch-icon">` (180×180) sur toutes les pages — icône pour ajout à l'écran d'accueil iOS/Android
 
 ### Données structurées
 

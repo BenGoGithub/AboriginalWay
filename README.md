@@ -82,7 +82,7 @@ Toutes les actions SEO sont tracées dans `SEO.md`. Résumé :
 
 ## Reste à faire
 
-- [ ] Migrer l'hébergeur : **1&1 → o2switch** (CDN Cloudflare inclus)
+- [ ] Migrer l'hébergeur : **1&1 → o2switch** — DNS déjà redirigés vers o2switch ✅, activer TigerCache (OpenLiteSpeed) depuis cPanel
 - [ ] Supprimer les mentions à l'**Atelier du Héron** (références, liens)
 - [ ] Supprimer la page **Yourtes** et ses références dans la navigation
 - [ ] Passer `membres.html` en page "En construction" avec adresse e-mail
