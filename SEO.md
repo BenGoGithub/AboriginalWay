@@ -1,6 +1,6 @@
 # Suivi SEO — Aboriginal Way
 
-## Dernière mise à jour : 2026-03-10 — Apple Touch Icon ajouté sur index.html + 11 pages mobiles
+## Dernière mise à jour : 2026-03-10 — Analyse Haloscan : audit mots-clés organiques aboriginalway.fr
 
 ---
 
@@ -90,7 +90,31 @@
 
 ## Actions restantes
 
-Aucune action en cours — site à jour et déployé.
+### En cours — Audit mots-clés Haloscan (2026-03-10)
+
+**Outil utilisé** : Haloscan — module "Domaine × Mots-clés"
+**Domaine analysé** : aboriginalway.fr
+**Statut** : analyse faite, implémentation à planifier
+
+#### Résultats de l'analyse (7 MC testés)
+
+| Mot-clé | Volume/mois | KGR | Compétition | Priorité |
+|---------|-------------|-----|-------------|----------|
+| peinture aborigène | 900 | 6.31 | 0.31 (faible) | **P1** |
+| art aborigène | 2 000 | 8.4 | 0.29 (faible) | **P1** |
+| didgeridoo | 7 700 | 28.7 | 0.99 (élevée) | P2 |
+| culture aborigène | 140 | NA | NA | P3 |
+| apprendre | 14 600 | 304 | 0.01 | ❌ trop générique |
+| animation | 12 500 | 2 488 | 0.03 | ❌ hors sujet |
+| aboriginal way | NA | NA | NA | Marque |
+
+#### Constat principal
+
+Le domaine n'est positionné sur **aucun** de ces mots-clés (Trafic = NA, Position = NA pour tous).
+
+#### Prochaine étape à réaliser
+
+Auditer les pages existantes (`site/ref/documents/`) pour vérifier la présence de "art aborigène" et "peinture aborigène" dans les balises `<title>`, `<h1>` et `<meta name="description">`, puis optimiser en conséquence.
 
 ---
 
