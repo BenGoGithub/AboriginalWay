@@ -203,10 +203,3 @@ if (path === '/photos') initPhotoGrid();
 - [x] Vidéo exposition centrée
 - [x] Brochure contact pleine largeur
 
----
-
-## Merge à effectuer
-
-```
-seo-routing → actualisation → main
-```

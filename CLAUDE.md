@@ -13,41 +13,46 @@ Fichier de référence lu à chaque session. Contient les préférences du proje
 
 - **Ne jamais produire de code sans accord préalable.** Avant tout changement, proposer une stratégie (les étapes), attendre la validation, puis implémenter.
 - **Une branche par feature/tâche.** Créer une branche dédiée (ex. `seo-homepage-content`) pour chaque tâche. La finaliser et la valider avant de merger sur `actualisation`.
-- **`actualisation` ne reçoit que du code finalisé.** C'est la branche de staging, pas de travail en cours.
-- Flux : `feature-branch` → `actualisation` → `main` (prod)
+- **`actualisation` ne reçoit que du code finalisé.** C'est la branche de staging, pas de travail en cours. C'est l'étape documentation : avant de merger `actualisation` → `main`.
+- Flux : `feature-branch` → `actualisation` → `main` → `deploy` (prod)
+
+## Workflow de collaboration
+
+- **réflexion** : on discute stratégie avant de faire.
+- **go** : validation explicite reçue ("go", "exécute", "c'est bon"). Claude implémente.
+- **Modification du CLAUDE.md** : toujours présenter un avant/après sur les sections concernées avant d'écrire. Ne jamais modifier sans validation explicite.
 
 ---
 
 ## Documentation du projet
 
-| Fichier | Contenu |
-|---------|---------|
-| `README.md` | Vue d'ensemble du projet, structure des dossiers, déploiement |
-| `ROUTING.md` | Architecture du routeur SPA (History API / pushState), fichiers modifiés, points techniques |
-| `SEO.md` | Journal de bord des actions SEO (tableau de suivi numéroté), notes techniques |
-| `mobile/README.md` | Documentation spécifique au site mobile (`mobile/`) |
+| Fichier | Rôle | Mettre à jour quand |
+|---------|------|---------------------|
+| `SEO.md` | Journal des actions SEO | À chaque action SEO mergée dans `actualisation` |
+| `CLAUDE.md` | Référence session IA | À chaque merge dans `actualisation` (branches, règles) |
+| `README.md` | Vue d'ensemble projet | Changement de structure, déploiement, hébergeur |
+| `ROUTING.md` | Architecture SPA | Modification du routeur ou des redirections |
+| `mobile/README.md` | Spécifique site mobile | Modification des pages ou CSS mobile |
+
+**Règle transversale** : la documentation se met à jour dans l'étape 2 du workflow Git, avant le merge `actualisation` → `main`, jamais après.
 
 ---
 
-## Migration hébergeur (à faire)
+## Migration hébergeur
 
-Migrer de **1&1** vers **o2switch** (CDN Cloudflare inclus, sans surcoût).
-
-Étapes : créer compte o2switch → copier fichiers dans `public_html/` via FTP → tester sur domaine temporaire → changer les DNS chez 1&1 → activer CDN Cloudflare depuis cPanel → résilier 1&1.
-
-Le site est 100% statique, pas de base de données. Le `.htaccess` est compatible Apache/cPanel sans modification.
+- DNS : 1&1 redirige désormais vers o2switch ✅
+- Cache : **TigerCache** (OpenLiteSpeed) — fonctionne sur domaine
+- Le site est 100% statique, pas de base de données. Le `.htaccess` est compatible Apache/cPanel sans modification.
 
 ---
 
 ## Contexte projet
 
-Site vitrine pour l'association **Aboriginal Way** (loi 1901, fondée en 2007).
-Promotion de l'art et de la culture aborigène australienne.
+Site vitrine pour l'association **Aboriginal Way** (loi 1901, fondée en 2007). Promotion de l'art et de la culture aborigène australienne.
 
 - Repo : `BenGoGithub/AboriginalWay`
 - Branche principale : `main`
-
-- Branches mergées dans `actualisation` : `seo-homepage-content`, `seo-og-url`, `seo-descriptions`
+- Branches mergées dans `actualisation` : `seo-homepage-content`, `seo-og-url`, `seo-descriptions`, `fix-layout-940px`, `claude/add-touch-icon-U3XyO`
 - Déploiement de test : `http://tuyo2268.odns.fr/`
 
 ### Structure clé
