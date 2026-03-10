@@ -12,8 +12,8 @@ Fichier de référence lu à chaque session. Contient les préférences du proje
 ## Workflow Git
 
 - **Ne jamais produire de code sans accord préalable.** Avant tout changement, proposer une stratégie (les étapes), attendre la validation, puis implémenter.
-- **Une branche par feature/tâche.** Créer une branche dédiée (ex. `seo-homepage-content`) pour chaque tâche. La finaliser et la valider avant de merger sur `actualisation`.
-- **`actualisation` ne reçoit que du code finalisé.** C'est la branche de staging, pas de travail en cours. C'est l'étape documentation : avant de merger `actualisation` → `main`.
+- **`actualisation` = documentation uniquement.** Seuls les fichiers `docs/`, `CLAUDE.md`, `README.md` peuvent être commités directement sur `actualisation`. Tout fichier HTML/CSS/JS/`.htaccess` doit transiter par une feature branch.
+- **Une branche par feature/tâche.** Créer une branche dédiée avant toute modification de code. Plusieurs correctifs liés peuvent être regroupés sur une même branche (ex. `fix-mobile-meta`). La finaliser et la valider avant de merger sur `actualisation`.
 - Flux : `feature-branch` → `actualisation` → `main` → `deploy` (prod)
 
 ## Workflow de collaboration
