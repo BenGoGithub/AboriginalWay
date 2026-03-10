@@ -93,7 +93,7 @@ Objectif : être cité dans les réponses IA (Perplexity, SGE, ChatGPT) pour les
 
 ## Axe 5 — UX Mobile
 
-- [ ] Auditer les 11 pages mobiles : meta description, H1/H2, longueur de contenu
+- [x] Auditer les 11 pages mobiles : meta description, H1/H2, longueur de contenu
 - [ ] Vérifier correspondance contenu desktop ↔ mobile (risque de dérive)
 - [ ] Tester rendu sur mobile réel : tap targets, lisibilité, scroll
 - [ ] **Règle de workflow** : chaque enrichissement desktop → la même feature branch inclut le mobile

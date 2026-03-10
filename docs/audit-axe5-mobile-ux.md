@@ -199,7 +199,7 @@ Bug : desktop a `noindex`, mobile non. Google peut indexer une page "en construc
 ## Actions recommandées
 
 ### P0 — Correctifs immédiats
-- [ ] Ajouter `<meta name="robots" content="noindex, follow">` sur `mobile/membres.html`
+- [x] Ajouter `<meta name="robots" content="noindex, follow">` sur `mobile/membres.html`
 - [ ] Supprimer le bloc GTM noscript dupliqué sur les 10 pages concernées
 
 ### P1 — Canonicals
