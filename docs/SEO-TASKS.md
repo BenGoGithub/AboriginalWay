@@ -85,9 +85,10 @@ Objectif : être cité dans les réponses IA (Perplexity, SGE, ChatGPT) pour les
 - [ ] En fonction des résultats :
   - [ ] Convertir images JPEG → WebP
   - [ ] Ajouter `width`/`height` explicites sur toutes les images (réduction CLS)
-  - [ ] Ajouter `loading="lazy"` sur images hors-écran
+  - [x] Ajouter `loading="lazy"` sur les 6 iframes YouTube/Vimeo (desktop + mobile)
+  - [x] Ajouter `loading="lazy"` sur les 27 miniatures de `photo.html`
+  - [ ] Ajouter `width`/`height` sur les miniatures de `photo.html` (CLS)
   - [ ] Évaluer `<link rel="preload">` pour l'image hero de `home.html`
-  - [ ] Ajouter `title` sur les iframes YouTube/Vimeo (accessibilité + signaux)
 
 ---
 

@@ -116,10 +116,11 @@ Les 11 pages mobiles sont du HTML statique classique. Risques CWV différents : 
 ## Actions recommandées (après mesure PageSpeed)
 
 ### À faire avant mesure (correctifs évidents)
-- [ ] Ajouter `loading="lazy"` sur toutes les iframes YouTube/Vimeo
-- [ ] Ajouter `width`/`height` sur les miniatures de `photo.html` (desktop)
+- [x] Ajouter `loading="lazy"` sur toutes les iframes YouTube/Vimeo (6 iframes, desktop + mobile)
+- [x] Ajouter `loading="lazy"` sur les 27 miniatures de `photo.html` desktop
+- [x] Corriger `animation-peinture.html` desktop : background Fond.jpg + structure #container/#texte
+- [ ] Ajouter `width`/`height` sur les miniatures de `photo.html` (desktop) — CLS
 - [ ] Ajouter `width`/`height` sur le logo partenaire dans `partenaires.html`
-- [ ] Corriger `animation-peinture.html` desktop : ajouter `general.css` + background
 
 ### À planifier après mesure PageSpeed
 - [ ] Lancer PageSpeed Insights sur `aboriginalway.fr` (desktop + mobile)
