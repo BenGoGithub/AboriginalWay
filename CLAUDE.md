@@ -54,6 +54,7 @@ Site vitrine pour l'association **Aboriginal Way** (loi 1901, fondée en 2007). 
 - Repo : `BenGoGithub/AboriginalWay`
 - Branche principale : `main`
 - Branches mergées dans `actualisation` : `seo-homepage-content`, `seo-og-url`, `seo-descriptions`, `fix-layout-940px`, `claude/add-touch-icon-U3XyO`, `fix-mobile-meta`, `fix-desktop-perf`
+- Branches en attente : `fix-seo-balises-desktop` (relecture), `claude/haloscan-integration-evaluation-PhEnb` (en cours)
 - Déploiement de test : `http://tuyo2268.odns.fr/`
 
 ### Structure clé

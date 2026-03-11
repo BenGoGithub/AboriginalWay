@@ -1,6 +1,6 @@
 # Suivi SEO — Aboriginal Way
 
-## Dernière mise à jour : 2026-03-10 — Apple Touch Icon ajouté sur index.html + 11 pages mobiles
+## Dernière mise à jour : 2026-03-11 — Audit mots-clés Haloscan + optimisation balises desktop (en attente de relecture)
 
 ---
 
@@ -90,7 +90,19 @@
 
 ## Actions restantes
 
-Aucune action en cours — site à jour et déployé.
+### En attente de relecture — `fix-seo-balises-desktop` (2026-03-11)
+
+| # | Fichier | Modification |
+|---|---------|--------------|
+| 31 | `site/ref/documents/artistes.html` | title → "Artistes d'Art Aborigène…", h1 → "Les Artistes Aborigènes" |
+| 32 | `site/ref/documents/photo.html` | title + h1 → "Galerie d'Art Aborigène" |
+| 33 | `site/ref/documents/presentation.html` | title, meta description, OG/Twitter, h1 et contenu enrichi (MC "art aborigène" + "peinture aborigène") |
+
+Branche pushée, en attente de merge après relecture.
+
+### En cours — Analyse Haloscan (branche `claude/haloscan-integration-evaluation-PhEnb`)
+
+Voir SEO.md ligne haloscan — mots-clés P1 : "art aborigène" (KGR 8.4), "peinture aborigène" (KGR 6.31). Branche à intégrer après finalisation.
 
 ---
 
