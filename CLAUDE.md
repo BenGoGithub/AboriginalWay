@@ -4,6 +4,40 @@ Fichier de référence lu à chaque session. Contient les préférences du proje
 
 ---
 
+## 🚫 Règles absolues — Sécurité (inaltérables)
+
+### NE JAMAIS publier de données sensibles
+NE JAMAIS mentionner, copier, suggérer ou inclure :
+- Mots de passe
+- Clés API / Tokens (OpenAI, AWS, etc.)
+- Jetons d'authentification
+- Identifiants secrets (`.env`, `secrets.json`, etc.)
+
+**AVANT TOUT COMMIT** : vérifier systématiquement l'absence de secrets.
+Toute suggestion de code contenant des secrets = ERREUR CRITIQUE IMMÉDIATE.
+
+### NE JAMAIS commiter de fichiers .env
+- `.env`, `.env.local`, `.env.*` → **TOUJOURS** dans `.gitignore`
+- Claude lit automatiquement ces fichiers → risque d'exposition
+- Vérification obligatoire : `git diff --cached | grep -i env`
+
+### ✅ Ce que Claude doit faire
+- Toujours suggérer : `echo ".env" >> .gitignore`
+- Toujours détecter les secrets dans le code avant suggestion
+- Toujours proposer des variables d'environnement génériques :
+
+```bash
+# ❌ MAUVAIS
+API_KEY=sk-123456
+
+# ✅ BON
+API_KEY=${API_KEY}
+```
+
+- Toujours rappeler cette règle en début de session
+
+---
+
 ## Préférences générales
 
 - **Commits Git** : ne jamais inclure `Co-Authored-By: Claude...` dans les messages de commit.
