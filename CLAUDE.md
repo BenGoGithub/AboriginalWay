@@ -51,6 +51,14 @@ API_KEY=${API_KEY}
 - Flux : `feature-branch` → `actualisation` → `main` → `deploy` (prod)
 - **Après chaque merge `main` → `deploy`** : supprimer les fichiers `.md` du tracking (`git rm --cached *.md docs/*.md`) et commiter. Le `.gitignore` de `deploy` contient déjà `*.md` mais ne désuite pas les fichiers déjà suivis.
 
+## Workflow Tâches
+
+- Tâches suivies sur Nextcloud, liste `Aboriginal Way`
+- Début de session : lire les tâches ouvertes
+- Fin de session : actualiser Nextcloud (nouvelles tâches + tâches terminées)
+
+---
+
 ## Workflow de collaboration
 
 - **réflexion** : on discute stratégie avant de faire.
