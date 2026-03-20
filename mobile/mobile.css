@@ -22,7 +22,7 @@ header {
   z-index: 10;
 }
 
-header img.logo { width: 36px; height: auto; flex-shrink: 0; }
+header img.logo { width: 36px; height: auto; flex-shrink: 0; filter: brightness(0) invert(1); }
 
 .site-title {
   flex: 1;
