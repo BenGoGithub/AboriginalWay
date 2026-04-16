@@ -2,8 +2,12 @@
 # Aboriginal Way - Configuration Apache
 # ============================================================
 
-# --- Redirection HTTP → HTTPS ---
+# --- Redirection www → non-www ---
 RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# --- Redirection HTTP → HTTPS ---
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
@@ -104,8 +108,8 @@ RewriteRule ^site/ref/documents/contact\.html$          /contact             [R=
 
 # --- SPA Router : réécriture des URLs propres vers index.html ---
 
-# Ne pas réécrire index.html lui-même
-RewriteRule ^index\.html$ - [L]
+# Redirection index.html → / (évite le doublon de page d'accueil)
+RewriteRule ^index\.html$ / [R=301,L]
 
 # Ne pas réécrire les fichiers et dossiers existants
 RewriteCond %{REQUEST_FILENAME} !-f
