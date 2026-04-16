@@ -1,6 +1,6 @@
 # SEO — Suivi des tâches Aboriginal Way
 
-Dernière mise à jour : 2026-03-10
+Dernière mise à jour : 2026-04-16
 
 ## Légende
 - `[ ]` À faire &nbsp;|&nbsp; `[~]` En cours &nbsp;|&nbsp; `[x]` Terminé &nbsp;|&nbsp; `[!]` Bloqué / décision requise
@@ -142,6 +142,17 @@ Objectif : être cité dans les réponses IA (Perplexity, SGE, ChatGPT) pour les
 | Axe 4 — Core Web Vitals | `docs/audit-axe4-cwv.md` |
 | Axe 5 — UX Mobile | `docs/audit-axe5-mobile-ux.md` |
 | Axe 6 — Backlinks | `docs/audit-axe6-backlinks.md` |
+
+---
+
+## Session 2026-04-16 — Réalisé
+
+- `fix-seo-canonicalisation` : correction des 3 problèmes de canonisation détectés via Search Console
+  - `.htaccess` : ajout redirection 301 `www.aboriginalway.fr` → `aboriginalway.fr`
+  - `.htaccess` : ajout redirection 301 `/index.html` → `/`
+  - `sitemap.xml` : suppression des 10 pages `/mobile/*.html` (canonical ≠ URL soumise)
+
+**Prochaine priorité** : merger `fix-seo-canonicalisation` → `actualisation` → `main` → `deploy`, puis soumettre le sitemap mis à jour en Search Console
 
 ---
 
